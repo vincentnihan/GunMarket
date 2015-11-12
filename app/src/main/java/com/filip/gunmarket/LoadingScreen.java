@@ -6,6 +6,8 @@ import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Graphics.PixmapFormat;
 import com.filip.androidgames.framework.Screen;
 
+import java.util.List;
+
 public class LoadingScreen extends Screen
 {
     public LoadingScreen(Game game) {
@@ -15,7 +17,20 @@ public class LoadingScreen extends Screen
 
     @Override
     public void update(float deltaTime) {
-
+        Graphics g = game.getGraphics();
+        Assets.menuBackground = g.newPixmap("mainmenuBackground.jpg", PixmapFormat.ARGB4444);
+        //Assets.logo = g.newPixmap("logo.png", PixmapFormat.ARGB4444);
+        //Assets.buttonBackground = g.newPixmap("headleft.png", PixmapFormat.ARGB4444);
+        Assets.worldMap = g.newPixmap("WorldMap.jpg", PixmapFormat.ARGB4444);
+        Assets.frame = g.newPixmap("frame.jpg", PixmapFormat.ARGB4444);
+        Assets.backButton = g.newPixmap("back.jpg", PixmapFormat.ARGB4444);
+        Assets.plusButton = g.newPixmap("plus.jpg", PixmapFormat.ARGB4444);
+        Assets.minusButton = g.newPixmap("minus.jpg", PixmapFormat.ARGB4444);
+        Assets.facism = g.newPixmap("facism.jpg", PixmapFormat.ARGB4444);
+        Assets.hammer = g.newPixmap("hammer and sickle.jpg", PixmapFormat.ARGB4444);
+        Assets.torch = g.newPixmap("torch.jpg", PixmapFormat.ARGB4444);
+        //Settings.load(game.getFileIO());
+        game.setScreen(new MainMenuScreen(game));
     }
     @Override
     public void present(float deltaTime) {
