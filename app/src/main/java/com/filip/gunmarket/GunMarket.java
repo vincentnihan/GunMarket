@@ -39,6 +39,9 @@ public class GunMarket extends AndroidGame{
         myWorld.setImageDrawable(myDraw);
 
 
+
+
+
        // g.drawPixmap(Assets.worldMap, 0, 0);
         //ImageView myWorld = (ImageView) findViewById(R.id.imageView);
 /*
