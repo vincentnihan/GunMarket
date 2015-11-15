@@ -26,19 +26,9 @@ public class GunMarket extends AndroidGame{
          Graphics g = this.getGraphics();
        // g.drawPixmap(Assets.worldMap, 0, 0);
 
-        setContentView(R.layout.activity_world);
-    myWorld = (ImageView)findViewById(R.id.imageView);
 
 
-        try {
-        myDraw = Drawable.createFromStream(getAssets().open("world/worldmap.png"), null);
-    }catch (IOException e){
-
-        }
-
-        myWorld.setImageDrawable(myDraw);
-
-
+        drawWorld();
 
 
 
@@ -56,5 +46,27 @@ public class GunMarket extends AndroidGame{
 
     public Screen getStartScreen() {return new LoadingScreen(this);}
 
+
+    public void drawWorld(){
+
+        setContentView(R.layout.activity_world);
+        myWorld = (ImageView)findViewById(R.id.imageView);
+
+
+        try {
+            myDraw = Drawable.createFromStream(getAssets().open("world/worldmap.png"), null);
+        }catch (IOException e){
+
+        }
+
+        myWorld.setImageDrawable(myDraw);
+
+
+    }
+
+    public void drawMainMenu(){
+        setContentView(R.layout.mainmenu);
+
+    }
 
 }

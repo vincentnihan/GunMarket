@@ -28,7 +28,7 @@ public class WorldScreen extends Screen {
             if(event.type == Input.TouchEvent.TOUCH_UP) {
                 if (inBounds(event, 80, 163,190 ,100)){
                     //USA TAPPED
-                    game.setScreen(new MainMenuScreen(game));
+                    //game.setScreen(new MainMenuScreen(game));
 
                 }
                 if(inBounds(event,203,348,167,300)){
@@ -52,8 +52,8 @@ public class WorldScreen extends Screen {
 
     @Override
     public void present(float deltaTime) {
-        Graphics g = game.getGraphics();
-        g.drawPixmap(Assets.worldMap, 0, 0);
+        //Graphics g = game.getGraphics();
+        //g.drawPixmap(Assets.worldMap, 0, 0);
     }
 
     @Override
