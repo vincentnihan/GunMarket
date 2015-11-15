@@ -15,6 +15,7 @@ import com.filip.androidgames.framework.Game;
 import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Input;
 import com.filip.androidgames.framework.Screen;
+import com.filip.gunmarket.Assets;
 
 public abstract class AndroidGame extends Activity implements Game {
     public AndroidFastRenderView renderView;
@@ -49,6 +50,7 @@ public abstract class AndroidGame extends Activity implements Game {
         fileIO = new AndroidFileIO(getAssets());
         audio = new AndroidAudio(this);
         input = new AndroidInput(this, renderView, scaleX, scaleY);
+        //Assets.click.play(1);
         screen = getStartScreen();
         setContentView(renderView);
     }
@@ -59,6 +61,11 @@ public abstract class AndroidGame extends Activity implements Game {
         screen.resume();
         renderView.resume();
     }
+
+    @Override
+    public void drawWorld(){}
+    @Override
+    public void drawMainMenu(){}
 
     @Override
     public void onPause() {

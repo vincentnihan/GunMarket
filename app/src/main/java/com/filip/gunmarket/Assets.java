@@ -16,4 +16,6 @@ public class Assets {
     public static Pixmap torch;
     public static Pixmap hammer;
 
+    public static Sound click;
+
 }

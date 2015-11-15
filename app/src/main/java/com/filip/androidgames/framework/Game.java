@@ -11,7 +11,7 @@ public interface Game
     public Screen getStartScreen();
 
     public void drawWorld();
-    public void drawMainMenu()
+    public void drawMainMenu();
 
 }
 

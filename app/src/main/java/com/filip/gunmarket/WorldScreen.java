@@ -1,5 +1,7 @@
 package com.filip.gunmarket;
 
+import android.util.Log;
+
 import com.filip.androidgames.framework.Game;
 import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Input;
@@ -19,7 +21,7 @@ public class WorldScreen extends Screen {
 
     @Override
     public void update(float deltaTime) {
-
+        Log.d("2 SCREEN IS CALLEDD", "update() called with: " + "deltaTime = [" + deltaTime + "]");
         List<Input.TouchEvent> touchEvents = game.getInput().getTouchEvents();
 
         int len = touchEvents.size();
@@ -29,7 +31,7 @@ public class WorldScreen extends Screen {
                 if (inBounds(event, 80, 163,190 ,100)){
                     //USA TAPPED
                     //game.setScreen(new MainMenuScreen(game));
-
+                        game.drawMainMenu();
                 }
                 if(inBounds(event,203,348,167,300)){
                     // SOUTH AMERICA
@@ -52,6 +54,8 @@ public class WorldScreen extends Screen {
 
     @Override
     public void present(float deltaTime) {
+        Log.d("2 SCREEN IS CALLEDD", "present() called with: " + "deltaTime = [" + deltaTime + "]");
+        //Assets.click.play(1);
         //Graphics g = game.getGraphics();
         //g.drawPixmap(Assets.worldMap, 0, 0);
     }

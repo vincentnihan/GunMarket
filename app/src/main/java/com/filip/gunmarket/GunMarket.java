@@ -3,6 +3,8 @@ package com.filip.gunmarket;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.filip.androidgames.framework.Graphics;
@@ -24,12 +26,15 @@ public class GunMarket extends AndroidGame{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
          Graphics g = this.getGraphics();
+        com.filip.gunmarket.Assets.click = this.getAudio().newSound("click.ogg");
        // g.drawPixmap(Assets.worldMap, 0, 0);
 
+        //Assets.click.play(1);
 
 
         drawWorld();
-
+        Log.d("screen gonna be called", "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
+        setScreen(new WorldScreen(this));
 
 
        // g.drawPixmap(Assets.worldMap, 0, 0);
@@ -47,6 +52,10 @@ public class GunMarket extends AndroidGame{
     public Screen getStartScreen() {return new LoadingScreen(this);}
 
 
+    public void buttonOnClick(View v){
+        drawMainMenu();
+    }
+    @Override
     public void drawWorld(){
 
         setContentView(R.layout.activity_world);
@@ -64,6 +73,7 @@ public class GunMarket extends AndroidGame{
 
     }
 
+    @Override
     public void drawMainMenu(){
         setContentView(R.layout.mainmenu);
 

@@ -31,6 +31,7 @@ public class LoadingScreen extends Screen
         //Assets.torch = g.newPixmap("torch.jpg", PixmapFormat.ARGB4444);
         //Settings.load(game.getFileIO());
         //game.setScreen(new MainMenuScreen(game));
+
         game.setScreen(new WorldScreen(game));
     }
     @Override
