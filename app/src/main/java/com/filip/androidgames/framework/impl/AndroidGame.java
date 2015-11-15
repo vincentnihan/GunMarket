@@ -17,7 +17,7 @@ import com.filip.androidgames.framework.Input;
 import com.filip.androidgames.framework.Screen;
 
 public abstract class AndroidGame extends Activity implements Game {
-    AndroidFastRenderView renderView;
+    public AndroidFastRenderView renderView;
     Graphics graphics;
     Audio audio;
     Input input;
