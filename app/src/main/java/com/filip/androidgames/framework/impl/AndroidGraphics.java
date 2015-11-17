@@ -10,7 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
-
+import android.view.View;
 import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Pixmap;
 
@@ -73,7 +73,7 @@ public class AndroidGraphics implements Graphics {
     public void drawRect(int x, int y, int width, int height, int color) {
         paint.setColor(color);
         paint.setStyle(Style.FILL);
-        canvas.drawRect(x, y, x + width - 1, y + width - 1, paint);
+        canvas.drawRect(x, y, x + width - 1, y + height - 1, paint);
     }
 
     @Override
@@ -99,6 +99,18 @@ public class AndroidGraphics implements Graphics {
     public void drawPixmap(Pixmap pixmap, int x, int y, int color) {
         paint.setColor(color);
         canvas.drawBitmap(((AndroidPixmap)pixmap).bitmap, x, y, paint);
+    }
+
+    @Override
+    public void drawText(String words, int x, int y, int color, int size) {
+        paint.setStrokeWidth(3);
+        paint.setColor(color);
+        paint.setTextSize(size);
+        paint.setTextAlign(Paint.Align.LEFT);
+        Rect bounds = new Rect();
+        paint.getTextBounds(words, 0, words.length(), bounds);
+        Paint.FontMetricsInt fontMetrics = paint.getFontMetricsInt();
+        canvas.drawText( words, x, y, paint);
     }
 
     @Override
