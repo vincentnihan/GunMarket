@@ -74,31 +74,45 @@ public class HelpScreen extends Screen {
         Graphics g = game.getGraphics();
         if(back == false) {
             if (backgroundX > 0) {
-                backgroundX -= 50;
-                if(backgroundX < 0)
+                if(backgroundX - 50 < 0) {
                     backgroundX = 0;
+                }
+                else
+                    backgroundX -= 50;
             }
             if (helpX > 0) {
-                helpX -= 50;
-                if (helpX < 0) {
+                if (helpX - 50< 0) {
                     helpX = 0;
                 }
+                else
+                    helpX -= 50;
             }
 
-            g.drawPixmap(Assets.backgroundFrame, backgroundX, 0, 0, 0 , 1280, 720);
+            g.drawPixmap(Assets.backgroundFrame, backgroundX, 0, 0, 0, 1280, 720);
             g.drawPixmap(Assets.helpBackground, backgroundX+25, 25, 0, 0, 1230, 670);
+            g.drawPixmap(Assets.helpTextFrame, backgroundX+340,60, 0, 0 , 600, 400);
+            g.drawText("Help Title", backgroundX + 640, 130, Color.GREEN, 50);
+            g.drawText("Help info",backgroundX+640, 180, Color.WHITE, 25);
+            g.drawText("Help info",backgroundX+640, 230, Color.WHITE, 25);
+            g.drawText("Help info", backgroundX + 640, 280, Color.WHITE, 25);
+            g.drawText("Help info", backgroundX + 640, 330, Color.WHITE, 25);
+            g.drawText("Help info", backgroundX + 640, 380, Color.WHITE, 25);
         }
         else
         {
-            backgroundX += 50;
-            if(backgroundX > 1280) {
-                backgroundX = 1280;
+            if(backgroundX < 1280) {
+                if (backgroundX + 50 > 1280) {
+                    backgroundX = 1280;
+                }
+                else
+                    backgroundX += 50;
             }
             if (helpX <1280) {
-                helpX += 50;
-                if(helpX > 1280) {
+                if(helpX + 50> 1280) {
                     helpX = 1280;
                 }
+                else
+                    helpX += 50;
 
             }
             else
@@ -110,6 +124,7 @@ public class HelpScreen extends Screen {
         }
         g.drawPixmap(Assets.buttonBackground, helpX, 520, 0, 0, 200, 100);
         g.drawText("Help", helpX + 100, 520 + 50, Color.GREEN, 50);
+
     }
 
     public void buttonCollider() {

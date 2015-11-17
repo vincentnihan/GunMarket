@@ -29,6 +29,7 @@ public class LoadingScreen extends Screen
         Assets.helpBackground = g.newPixmap("helpBackground.jpg", PixmapFormat.ARGB4444);
         Assets.backgroundFrame = g.newPixmap("BackgroundFrame.jpg", PixmapFormat.ARGB4444);
         Assets.creditBackground = g.newPixmap("creditBackground.jpg", PixmapFormat.ARGB4444);
+        Assets.helpTextFrame = g.newPixmap("HelpTextFrame.jpg" , PixmapFormat.ARGB4444);
         //Assets.frame = g.newPixmap("frame.jpg", PixmapFormat.ARGB4444);
         Assets.backButton = g.newPixmap("back.png", PixmapFormat.ARGB4444);
         //Assets.plusButton = g.newPixmap("plus.jpg", PixmapFormat.ARGB4444);

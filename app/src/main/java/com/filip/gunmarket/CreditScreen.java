@@ -74,36 +74,48 @@ public class CreditScreen extends Screen {
         Graphics g = game.getGraphics();
         if(back == false) {
             if (backgroundY < 0) {
-                backgroundY += speed;
-                if (backgroundY > 0) {
+                if (backgroundY + speed > 0) {
                     backgroundY = 0;
                 }
+                else
+                    backgroundY += speed;
             }
             if (titleHeight < 620)
             {
-                titleHeight += 50;
-                if (titleHeight > 620)
+                if (titleHeight + 50 > 620)
                 {
                     titleHeight = 620;
                 }
+                else
+                    titleHeight += 50;
             }
             g.drawPixmap(Assets.backgroundFrame, 0, backgroundY, 0, 0 , 1280, 720);
             g.drawPixmap(Assets.creditBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
+            g.drawPixmap(Assets.helpTextFrame, 340,backgroundY+60, 0, 0 , 600, 400);
+            g.drawText("Credit", 640, backgroundY + 130, Color.GREEN, 50);
+            g.drawText("Vincent Ni",640, backgroundY+180, Color.WHITE, 25);
+            g.drawText("Mehmet Gunnay",640, backgroundY+230, Color.WHITE, 25);
+            g.drawText("Chao Wang", 640, backgroundY+280, Color.WHITE, 25);
+            g.drawText("Andrew Justin Lacap", 640, backgroundY+330, Color.WHITE, 25);
+            g.drawText("Parth Deepak Kakkad", 640, backgroundY+380, Color.WHITE, 25);
 
         }
         else
         {
-            backgroundY -= speed;
-            if(backgroundY <-720)
-            {
-                backgroundY = -720;
+            if(backgroundY > 0 ) {
+                if (backgroundY - speed < 0) {
+                    backgroundY = 0;
+                }
+                else
+                    backgroundY -= speed;
             }
             if (titleHeight > -100) {
-                titleHeight -= 50;
-                if(titleHeight <-100)
+                if(titleHeight - 50<-100)
                 {
                     titleHeight = -100;
                 }
+                else
+                    titleHeight -= 50;
             }
             else
             {
@@ -114,6 +126,7 @@ public class CreditScreen extends Screen {
         }
         g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 400, 100);
         g.drawText("Bringer of Peace", 440 + 200, titleHeight + 50, Color.GREEN, 50);
+
     }
 
     public void buttonCollider() {

@@ -21,5 +21,6 @@ public class Assets {
     public static Pixmap hammer;
     public static Pixmap creditBackground;
     public static Pixmap helpBackground;
+    public static Pixmap helpTextFrame;
 
 }

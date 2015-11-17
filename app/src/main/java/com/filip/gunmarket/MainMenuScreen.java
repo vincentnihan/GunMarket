@@ -61,6 +61,7 @@ public class MainMenuScreen extends Screen {
     int startButtonX = -200;
     int helpButtonX = 1280;
     int speed = 50;
+    int backgroundX = -1280;
     @Override
     public void update(float deltaTime) {
         buttonCollider();
@@ -91,26 +92,51 @@ public class MainMenuScreen extends Screen {
     {
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.backgroundFrame, 0, 0, 0, 0 , 1280, 720);
-        g.drawPixmap(Assets.menuBackground, 25, 25, 0, 0 , 1230, 670);
+        g.drawPixmap(Assets.menuBackground, 25, 25, 0, 0, 1230, 670);
     }
     public void drawButton(float deltaTime)
     {
-        Graphics g = game.getGraphics();
-        if(titleHeight < 0) {
-            titleHeight += speed;
+        if(buttonStage == 0) {
+            Graphics g = game.getGraphics();
+            if (titleHeight < 0) {
+                titleHeight += speed;
+            }
+            if (startButtonX < 0) {
+                startButtonX += speed;
+            }
+            if (helpButtonX > 1080) {
+                helpButtonX -= speed;
+            }
+            g.drawPixmap(Assets.buttonBackground, startButtonX, 520, 0, 0, 200, 100);
+            g.drawText("Start", startButtonX + 100, 520 + 50, Color.GREEN, 50);
+            g.drawPixmap(Assets.buttonBackground, helpButtonX, 520, 0, 0, 200, 100);
+            g.drawText("Help", helpButtonX + 100, 520 + 50, Color.GREEN, 50);
+            g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 400, 100);
+            g.drawText("Bringer of Peace", 440 + 200, titleHeight + 50, Color.GREEN, 50);
         }
-        if(startButtonX < 0) {
-            startButtonX+= speed;
+        else if(buttonStage == 1)
+        {
+            Graphics g = game.getGraphics();
+            if (startButtonX < 1280) {
+                startButtonX += speed;
+            }
+            if(backgroundX< 0)
+            {
+                if(backgroundX + speed> 0) {
+                    backgroundX = 0;
+                    game.setScreen(new WorldScreen(game));
+                }
+                 else
+                {
+                    backgroundX += speed;
+                }
+
+            }
+            g.drawPixmap(Assets.worldMap, backgroundX, 0);
+            g.drawPixmap(Assets.buttonBackground, startButtonX, 520, 0, 0, 200, 100);
+            g.drawText("Start", startButtonX + 100, 520 + 50, Color.GREEN, 50);
+
         }
-        if(helpButtonX > 1080) {
-            helpButtonX-= speed;
-        }
-        g.drawPixmap(Assets.buttonBackground, startButtonX, 520, 0,0, 200, 100);
-        g.drawText("Start", startButtonX + 100, 520 + 50, Color.GREEN, 50);
-        g.drawPixmap(Assets.buttonBackground, helpButtonX, 520, 0, 0, 200, 100);
-        g.drawText("Help", helpButtonX + 100, 520 + 50, Color.GREEN, 50);
-        g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 400, 100);
-        g.drawText("Bringer of Peace", 440 + 200, titleHeight + 50, Color.GREEN, 50);
     }
     public void buttonCollider() {
         Graphics g = game.getGraphics();
@@ -132,7 +158,8 @@ public class MainMenuScreen extends Screen {
                 if(inBounds(event,startButtonX, 520, 200, 100))
                 {
                    // Log.i("MainMenu","Start Press");
-                    game.setScreen(new WorldScreen(game));
+                    buttonStage = 1;
+
                     return;
                 }
                 //Help
