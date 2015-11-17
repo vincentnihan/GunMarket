@@ -58,7 +58,7 @@ public class WorldScreen extends Screen {
         Log.d("2 SCREEN IS CALLEDD", "present() called with: " + "deltaTime = [" + deltaTime + "]");
         //Assets.click.play(1);
         Graphics g = game.getGraphics();
-        //g.drawPixmap(Assets.worldMap, 0, 0);
+        g.drawPixmap(Assets.worldMap, 0, 0);
         g.drawText("$1000K",10,710, Color.YELLOW,50);
     }
 
