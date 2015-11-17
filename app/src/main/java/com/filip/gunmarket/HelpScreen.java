@@ -74,18 +74,18 @@ public class HelpScreen extends Screen {
         Graphics g = game.getGraphics();
         if(back == false) {
             if (backgroundX > 0) {
-                if(backgroundX - 50 * deltaTime< 0) {
+                if(backgroundX - 50 < 0) {
                     backgroundX = 0;
                 }
                 else
-                    backgroundX -= 50 * deltaTime;
+                    backgroundX -= 50 ;
             }
             if (helpX > 0) {
-                if (helpX - 50 * deltaTime< 0) {
+                if (helpX - 50 < 0) {
                     helpX = 0;
                 }
                 else
-                    helpX -= 50 * deltaTime;
+                    helpX -= 50 ;
             }
 
             g.drawPixmap(Assets.backgroundFrame, backgroundX, 0, 0, 0, 1280, 720);
@@ -100,19 +100,19 @@ public class HelpScreen extends Screen {
         }
         else
         {
-            if(backgroundX < 1280) {
-                if (backgroundX + 50 * deltaTime> 1280) {
-                    backgroundX = 1280;
+            if(backgroundX < 0) {
+                if (backgroundX + 50 > 0) {
+                    backgroundX = 0;
                 }
                 else
-                    backgroundX += 50 * deltaTime;
+                    backgroundX += 50 ;
             }
             if (helpX <1280) {
-                if(helpX + 50 * deltaTime> 1280) {
+                if(helpX + 50 > 1280) {
                     helpX = 1280;
                 }
                 else
-                    helpX += 50 * deltaTime;
+                    helpX += 50 ;
 
             }
             else

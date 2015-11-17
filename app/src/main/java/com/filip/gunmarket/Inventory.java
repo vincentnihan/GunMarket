@@ -25,7 +25,7 @@ public class Inventory extends Screen {
         buttonCollider();
     }
 
-    public void drawBackground()
+    public void drawBackground(float deltaTime)
     {
         Graphics g = game.getGraphics();
         if(back == false) {
@@ -34,7 +34,7 @@ public class Inventory extends Screen {
                     backgroundX = 0;
                 }
                 else
-                    backgroundX -= 50;
+                    backgroundX -= 50 ;
             }
 
             g.drawPixmap(Assets.backgroundFrame, backgroundX, 0, 0, 0, 1280, 720);
@@ -51,9 +51,9 @@ public class Inventory extends Screen {
         }
         else
         {
-            if(backgroundX < 1280) {
-                if (backgroundX + 50 > 1280) {
-                    backgroundX = 1280;
+            if(backgroundX < 0) {
+                if (backgroundX + 50 > 0) {
+                    backgroundX = 0;
                 }
                 else
                     backgroundX += 50;
@@ -93,7 +93,7 @@ public class Inventory extends Screen {
 
     @Override
     public void present(float deltaTime) {
-        drawBackground();
+        drawBackground(deltaTime);
     }
 
     @Override
