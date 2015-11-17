@@ -95,33 +95,18 @@ public class MainMenuScreen extends Screen {
     public void drawButton(float deltaTime)
     {
         Graphics g = game.getGraphics();
-        if(buttonStage == 0)
-        {
-            if(titleHeight < 0) {
-                titleHeight += speed;
-            }
-            if(startButtonX < 0) {
-                startButtonX+= speed;
-            }
-            if(helpButtonX > 1080) {
-                helpButtonX-= speed;
-            }
-            g.drawRect(startButtonX, 520, 200, 100, Color.RED);
-            g.drawRect(helpButtonX, 520, 200, 100, Color.YELLOW);
-            g.drawRect(440, titleHeight, 400, 100, Color.BLACK);
+        if(titleHeight < 0) {
+            titleHeight += speed;
         }
-        else if(buttonStage == 1)
-        {
-            game.setScreen(new WorldScreen(game));
+        if(startButtonX < 0) {
+            startButtonX+= speed;
         }
-        else if(buttonStage == 2) {
-            game.setScreen(new HelpScreen(game));
+        if(helpButtonX > 1080) {
+            helpButtonX-= speed;
         }
-        else if(buttonStage == 3)
-        {
-            game.setScreen(new CreditScreen(game));
-
-        }
+        g.drawRect(startButtonX, 520, 200, 100, Color.RED);
+        g.drawRect(helpButtonX, 520, 200, 100, Color.YELLOW);
+        g.drawRect(440, titleHeight, 400, 100, Color.BLACK);
     }
     public void buttonCollider() {
         Graphics g = game.getGraphics();
@@ -136,21 +121,21 @@ public class MainMenuScreen extends Screen {
                 if(inBounds(event,440, titleHeight, 400, 100))
                 {
                    // Log.i("MainMenu","Credit Press");
-                    buttonStage = 3;
+                    game.setScreen(new CreditScreen(game));
                     return;
                 }
                 //New Game
                 if(inBounds(event,startButtonX, 520, 200, 100))
                 {
                    // Log.i("MainMenu","Start Press");
-                    buttonStage = 1;
+                    game.setScreen(new WorldScreen(game));
                     return;
                 }
                 //Help
                 if(inBounds(event, helpButtonX, 520, 200, 100))
                 {
                     //Log.i("MainMenu","Help Press");
-                    buttonStage = 2;
+                    game.setScreen(new HelpScreen(game));
                     return;
                 }
             }

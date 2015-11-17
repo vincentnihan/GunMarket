@@ -62,6 +62,7 @@ public class CreditScreen extends Screen {
 
     int backgroundY = -720;
     int titleHeight = 0;
+    int speed = 50;
     @Override
     public void update(float deltaTime) {
 
@@ -70,7 +71,7 @@ public class CreditScreen extends Screen {
     public void drawBackground()
     {
         Graphics g = game.getGraphics();
-        int speed = 50;
+
         if(backgroundY < 0)
         {
             backgroundY += speed;

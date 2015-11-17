@@ -61,6 +61,7 @@ public class HelpScreen extends Screen {
     }
 
     int backgroundX = 1280;
+    int helpX = 1080;
 
     @Override
     public void update(float deltaTime) {
@@ -72,7 +73,9 @@ public class HelpScreen extends Screen {
         Graphics g = game.getGraphics();
         if(backgroundX > 0)
         {
-            backgroundX += 50;
+            backgroundX -= 50;
+            helpX -= 50;
+            g.drawRect(helpX, 520, 200, 100, Color.YELLOW);
         }
         g.drawRect(backgroundX, 0, 1280, 720,Color.BLUE);
     }
