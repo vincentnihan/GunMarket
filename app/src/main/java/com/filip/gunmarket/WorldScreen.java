@@ -58,6 +58,10 @@ public class WorldScreen extends Screen {
                     // MIddle down button
                     game.setScreen(new BuyScreen(game));
                 }
+                if(inBounds(event,1080,620,200,100)){
+                    // OPEN INVENTORY
+                    
+                }
             }
         }
     }
@@ -69,8 +73,10 @@ public class WorldScreen extends Screen {
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.worldMap, 0, 0);
         g.drawText("$1000K", 90, 710, Color.GREEN, 50);
-        g.drawText("Infl: 0", 1090,710, Color.GREEN, 50);
+        g.drawText("Infl: 0", 90,710-50, Color.GREEN, 50);
         g.drawText("Tap here for Buy Template", 640, 710, Color.GREEN, 30);
+
+        g.drawTextR("Inventory", 1270, 710, Color.GREEN, 50);
     }
 
     @Override
