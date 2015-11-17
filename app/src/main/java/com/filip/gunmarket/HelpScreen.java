@@ -69,23 +69,23 @@ public class HelpScreen extends Screen {
         buttonCollider();
     }
 
-    public void drawBackground()
+    public void drawBackground(float deltaTime)
     {
         Graphics g = game.getGraphics();
         if(back == false) {
             if (backgroundX > 0) {
-                if(backgroundX - 50 < 0) {
+                if(backgroundX - 50 * deltaTime< 0) {
                     backgroundX = 0;
                 }
                 else
-                    backgroundX -= 50;
+                    backgroundX -= 50 * deltaTime;
             }
             if (helpX > 0) {
-                if (helpX - 50< 0) {
+                if (helpX - 50 * deltaTime< 0) {
                     helpX = 0;
                 }
                 else
-                    helpX -= 50;
+                    helpX -= 50 * deltaTime;
             }
 
             g.drawPixmap(Assets.backgroundFrame, backgroundX, 0, 0, 0, 1280, 720);
@@ -101,18 +101,18 @@ public class HelpScreen extends Screen {
         else
         {
             if(backgroundX < 1280) {
-                if (backgroundX + 50 > 1280) {
+                if (backgroundX + 50 * deltaTime> 1280) {
                     backgroundX = 1280;
                 }
                 else
-                    backgroundX += 50;
+                    backgroundX += 50 * deltaTime;
             }
             if (helpX <1280) {
-                if(helpX + 50> 1280) {
+                if(helpX + 50 * deltaTime> 1280) {
                     helpX = 1280;
                 }
                 else
-                    helpX += 50;
+                    helpX += 50 * deltaTime;
 
             }
             else
@@ -150,7 +150,7 @@ public class HelpScreen extends Screen {
 
     @Override
     public void present(float deltaTime) {
-        drawBackground();
+        drawBackground(deltaTime);
     }
 
     @Override

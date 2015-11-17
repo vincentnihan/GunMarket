@@ -69,25 +69,25 @@ public class CreditScreen extends Screen {
         buttonCollider();
     }
 
-    public void drawBackground()
+    public void drawBackground(float deltaTime)
     {
         Graphics g = game.getGraphics();
         if(back == false) {
             if (backgroundY < 0) {
-                if (backgroundY + speed > 0) {
+                if (backgroundY + speed * deltaTime > 0) {
                     backgroundY = 0;
                 }
                 else
-                    backgroundY += speed;
+                    backgroundY += speed * deltaTime;
             }
             if (titleHeight < 620)
             {
-                if (titleHeight + 50 > 620)
+                if (titleHeight + 50 * deltaTime > 620)
                 {
                     titleHeight = 620;
                 }
                 else
-                    titleHeight += 50;
+                    titleHeight += 50 * deltaTime;
             }
             g.drawPixmap(Assets.backgroundFrame, 0, backgroundY, 0, 0 , 1280, 720);
             g.drawPixmap(Assets.creditBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
@@ -103,19 +103,19 @@ public class CreditScreen extends Screen {
         else
         {
             if(backgroundY > 0 ) {
-                if (backgroundY - speed < 0) {
+                if (backgroundY - speed * deltaTime< 0) {
                     backgroundY = 0;
                 }
                 else
-                    backgroundY -= speed;
+                    backgroundY -= speed * deltaTime;
             }
             if (titleHeight > -100) {
-                if(titleHeight - 50<-100)
+                if(titleHeight - 50 * deltaTime<-100)
                 {
                     titleHeight = -100;
                 }
                 else
-                    titleHeight -= 50;
+                    titleHeight -= 50 * deltaTime;
             }
             else
             {
@@ -153,7 +153,7 @@ public class CreditScreen extends Screen {
 
     @Override
     public void present(float deltaTime) {
-        drawBackground();
+        drawBackground(deltaTime);
     }
 
     @Override

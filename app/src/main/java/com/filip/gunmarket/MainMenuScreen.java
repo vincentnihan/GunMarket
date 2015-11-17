@@ -99,13 +99,13 @@ public class MainMenuScreen extends Screen {
         if(buttonStage == 0) {
             Graphics g = game.getGraphics();
             if (titleHeight < 0) {
-                titleHeight += speed;
+                titleHeight += speed * deltaTime;
             }
             if (startButtonX < 0) {
-                startButtonX += speed;
+                startButtonX += speed * deltaTime;
             }
             if (helpButtonX > 1080) {
-                helpButtonX -= speed;
+                helpButtonX -= speed * deltaTime;
             }
             g.drawPixmap(Assets.buttonBackground, startButtonX, 520, 0, 0, 200, 100);
             g.drawText("Start", startButtonX + 100, 520 + 50, Color.GREEN, 50);
@@ -118,17 +118,17 @@ public class MainMenuScreen extends Screen {
         {
             Graphics g = game.getGraphics();
             if (startButtonX < 1280) {
-                startButtonX += speed;
+                startButtonX += speed * deltaTime;
             }
             if(backgroundX< 0)
             {
-                if(backgroundX + speed> 0) {
+                if(backgroundX + speed * deltaTime> 0) {
                     backgroundX = 0;
                     game.setScreen(new WorldScreen(game));
                 }
                  else
                 {
-                    backgroundX += speed;
+                    backgroundX += speed * deltaTime;
                 }
 
             }
