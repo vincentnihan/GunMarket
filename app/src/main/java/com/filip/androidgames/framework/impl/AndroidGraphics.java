@@ -110,6 +110,18 @@ public class AndroidGraphics implements Graphics {
         Rect bounds = new Rect();
         paint.getTextBounds(words, 0, words.length(), bounds);
         Paint.FontMetricsInt fontMetrics = paint.getFontMetricsInt();
+        canvas.drawText(words, x, y, paint);
+    }
+
+    @Override
+    public void drawTextR(String words, int x, int y, int color, int size) {
+        paint.setStrokeWidth(3);
+        paint.setColor(color);
+        paint.setTextSize(size);
+        paint.setTextAlign(Paint.Align.RIGHT);
+        Rect bounds = new Rect();
+        paint.getTextBounds(words, 0, words.length(), bounds);
+        Paint.FontMetricsInt fontMetrics = paint.getFontMetricsInt();
         canvas.drawText( words, x, y, paint);
     }
 
