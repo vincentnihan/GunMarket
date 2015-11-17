@@ -60,6 +60,7 @@ public class WorldScreen extends Screen {
                 }
                 if(inBounds(event,1080,620,200,100)){
                     // OPEN INVENTORY
+                    game.setScreen(new InventoryScreen(game));
                     
                 }
             }
