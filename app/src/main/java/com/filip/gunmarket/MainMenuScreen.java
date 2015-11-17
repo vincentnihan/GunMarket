@@ -57,20 +57,19 @@ public class MainMenuScreen extends Screen {
         super(game);
     }
     int buttonStage = 0;
-    int titleHeight = 720;
+    int titleHeight = 0;
     int startButtonX = -200;
     int helpButtonX = 1280;
-    int speed = 10;
+    int speed = 5;
     @Override
     public void update(float deltaTime) {
         buttonCollider();
-        drawButton(deltaTime);
     }
 
     @Override
     public void present(float deltaTime) {
-        //drawBackground();
-        //drawButton();
+        drawBackground();
+        drawButton(deltaTime);
     }
 
     @Override
@@ -91,29 +90,29 @@ public class MainMenuScreen extends Screen {
     public void drawBackground()
     {
         Graphics g = game.getGraphics();
-        g.drawRect(0, 0, 720, 1280,Color.GREEN);
+        g.drawRect(0, 0, 1280, 720,Color.GREEN);
     }
     public void drawButton(float deltaTime)
     {
         Graphics g = game.getGraphics();
         if(buttonStage == 0)
         {
-            if(titleHeight > 600) {
-                titleHeight -= speed* deltaTime;
+            if(titleHeight < 125) {
+                titleHeight += speed;
             }
             if(startButtonX < 0) {
-                startButtonX+= speed* deltaTime;
+                startButtonX+= speed;
             }
             if(helpButtonX > 1080) {
-                helpButtonX-= speed * deltaTime;
+                helpButtonX-= speed;
             }
-            g.drawRect(200, startButtonX, 100, 200, Color.RED);
-            g.drawRect(200, helpButtonX, 100, 200, Color.YELLOW);
-            g.drawRect(titleHeight, 440, 100, 400, Color.BLACK);
+            g.drawRect(startButtonX, 520, 200, 100, Color.RED);
+            g.drawRect(helpButtonX, 520, 200, 100, Color.YELLOW);
+            g.drawRect(440, titleHeight, 400, 100, Color.BLACK);
         }
         else if(buttonStage == 1)
         {
-
+            game.setScreen(new WorldScreen(game));
         }
     }
     public void buttonCollider() {
@@ -126,21 +125,21 @@ public class MainMenuScreen extends Screen {
             if(event.type == TouchEvent.TOUCH_UP)
             {
                 //Credit
-                if(inBounds(event,600, 440, 100, 400))
+                if(inBounds(event,440, titleHeight, 400, 100))
                 {
                    // Log.i("MainMenu","Credit Press");
                     buttonStage = 3;
                     return;
                 }
                 //New Game
-                if(inBounds(event, 200, 0, 100, 200))
+                if(inBounds(event,startButtonX, 520, 200, 100))
                 {
                    // Log.i("MainMenu","Start Press");
                     buttonStage = 1;
                     return;
                 }
                 //Help
-                if(inBounds(event, 200, 1080, 100, 200))
+                if(inBounds(event, helpButtonX, 520, 200, 100))
                 {
                     //Log.i("MainMenu","Help Press");
                     buttonStage = 2;
