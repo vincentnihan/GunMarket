@@ -122,7 +122,7 @@ public class MainMenuScreen extends Screen {
             }
             if(backgroundX< 0)
             {
-                if(backgroundX + speed * deltaTime> 0) {
+                if(backgroundX + speed > 0) {
                     backgroundX = 0;
                     game.setScreen(new WorldScreen(game));
                 }
