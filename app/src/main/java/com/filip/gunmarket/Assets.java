@@ -11,6 +11,8 @@ public class Assets {
     public static Pixmap topicBackground;
     public static Pixmap frame;
     public static Pixmap backgroundFrame;
+    public static Pixmap tradeIcon;
+    public static Pixmap eventIcon;
     public static Pixmap backButton;
     public static Pixmap plusButton;
     public static Pixmap minusButton;
