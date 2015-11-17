@@ -31,7 +31,7 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
         long startTime = System.nanoTime();
         while(running) {  
             if(!holder.getSurface().isValid())
-                continue;           
+                continue;
             
             // converted from nanoseconds to seconds
             float deltaTime = (System.nanoTime()-startTime) / 1000000000.0f;
@@ -46,7 +46,7 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
             // Draw the artificial framebuffer.
             // The scaling is performed automatically in case the destination 
             // rectangle is smaller or bigger than the framebuffer
-            canvas.drawBitmap(framebuffer, null, dstRect, null);                           
+            canvas.drawBitmap(framebuffer, null, dstRect, null);
             holder.unlockCanvasAndPost(canvas);
         }
     }

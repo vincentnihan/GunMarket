@@ -57,10 +57,10 @@ public class MainMenuScreen extends Screen {
         super(game);
     }
     int buttonStage = 0;
-    int titleHeight = 0;
+    int titleHeight = -100;
     int startButtonX = -200;
     int helpButtonX = 1280;
-    int speed = 5;
+    int speed = 50;
     @Override
     public void update(float deltaTime) {
         buttonCollider();
@@ -97,7 +97,7 @@ public class MainMenuScreen extends Screen {
         Graphics g = game.getGraphics();
         if(buttonStage == 0)
         {
-            if(titleHeight < 125) {
+            if(titleHeight < 0) {
                 titleHeight += speed;
             }
             if(startButtonX < 0) {
@@ -112,7 +112,24 @@ public class MainMenuScreen extends Screen {
         }
         else if(buttonStage == 1)
         {
+            if(startButtonX < 1280)
+            {
+                startButtonX += speed ;
+                g.drawRect(startButtonX, 520, 200, 100, Color.RED);
+            }
             game.setScreen(new WorldScreen(game));
+        }
+        else if(buttonStage == 2) {
+            if (helpButtonX > -200) {
+                helpButtonX -= speed;
+                g.drawRect(helpButtonX, 520, 200, 100, Color.YELLOW);
+            }
+            game.setScreen(new HelpScreen(game));
+        }
+        else if(buttonStage == 3)
+        {
+            game.setScreen(new CreditScreen(game));
+
         }
     }
     public void buttonCollider() {
