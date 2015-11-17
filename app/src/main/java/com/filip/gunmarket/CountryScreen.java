@@ -1,6 +1,9 @@
 package com.filip.gunmarket;
 
+import android.graphics.Color;
+
 import com.filip.androidgames.framework.Game;
+import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Screen;
 
 /**
@@ -15,6 +18,8 @@ public class CountryScreen extends Screen {
 
     }
     public  void present(float deltaTime){
+        Graphics g = game.getGraphics();
+        g.drawRect(0, 0, 1280, 720, Color.GREEN);
 
     }
     public  void pause(){

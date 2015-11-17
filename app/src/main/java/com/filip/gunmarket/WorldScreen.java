@@ -31,23 +31,28 @@ public class WorldScreen extends Screen {
             if(event.type == Input.TouchEvent.TOUCH_UP) {
                 if (inBounds(event, 80, 163,190 ,100)){
                     //USA TAPPED
-                    game.setScreen(new MainMenuScreen(game));
+                    game.setScreen(new CountryScreen(game));
                     //game.drawMainMenu();
                 }
                 if(inBounds(event,203,348,167,300)){
                     // SOUTH AMERICA
+                    game.setScreen(new RegionScreen(game));
                 }
                 if(inBounds(event,489,72,619-489,217-72 )){
                     // EUROPEAN UNION
+                    game.setScreen(new CountryScreen(game));
                 }
                 if(inBounds(event,620, 37, 1048-620,144-37)){
                     //RUSSIA
+                    game.setScreen(new CountryScreen(game));
                 }
                 if(inBounds(event,815,162,991-815,259-162)){
                     //CHINA
+                    game.setScreen(new CountryScreen(game));
                 }
                 if (inBounds(event,619,193,749-619, 293-193)){
                     //MIDDLE EAST
+                    game.setScreen(new RegionScreen(game));
                 }
             }
         }
