@@ -25,7 +25,8 @@ public class RegionScreen extends Screen {
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
 
 
-
+        //g.drawPixmap(Assets.worldMap, 0, 0);
+        g.drawPixmap(Assets.backButton, 1280-256,720-256);
         g.drawText("REGION NAME", 640, 75, Color.YELLOW, 70);
         //g.drawText("Connections: 0%", 640, 105, Color.WHITE, 30);
 

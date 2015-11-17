@@ -21,7 +21,8 @@ public class LoadingScreen extends Screen
         //Assets.menuBackground = g.newPixmap("mainmenuBackground.jpg", PixmapFormat.ARGB4444);
         //Assets.logo = g.newPixmap("logo.png", PixmapFormat.ARGB4444);
         //Assets.buttonBackground = g.newPixmap("headleft.png", PixmapFormat.ARGB4444);
-
+        Assets.tradeIcon = g.newPixmap("money icon.png", PixmapFormat.ARGB4444);
+        Assets.eventIcon = g.newPixmap("exclamation.png", PixmapFormat.ARGB4444);
         
         Assets.worldMap = g.newPixmap("WorldMap.png", PixmapFormat.ARGB4444);
         //Assets.frame = g.newPixmap("frame.jpg", PixmapFormat.ARGB4444);
