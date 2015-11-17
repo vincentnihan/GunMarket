@@ -19,7 +19,10 @@ public class CountryScreen extends Screen {
     }
     public  void present(float deltaTime){
         Graphics g = game.getGraphics();
-        g.drawRect(0, 0, 1280, 720, Color.GREEN);
+        g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
+
+        g.drawText("REGION NAME", 640, 75, Color.YELLOW, 70);
+        g.drawText("Connections: 0%", 640, 105, Color.WHITE, 30);
 
     }
     public  void pause(){

@@ -106,7 +106,7 @@ public class AndroidGraphics implements Graphics {
         paint.setStrokeWidth(3);
         paint.setColor(color);
         paint.setTextSize(size);
-        paint.setTextAlign(Paint.Align.LEFT);
+        paint.setTextAlign(Paint.Align.CENTER);
         Rect bounds = new Rect();
         paint.getTextBounds(words, 0, words.length(), bounds);
         Paint.FontMetricsInt fontMetrics = paint.getFontMetricsInt();
