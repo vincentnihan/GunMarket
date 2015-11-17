@@ -63,25 +63,62 @@ public class CreditScreen extends Screen {
     int backgroundY = -720;
     int titleHeight = 0;
     int speed = 50;
+    boolean back = false;
     @Override
     public void update(float deltaTime) {
-
+        buttonCollider();
     }
 
     public void drawBackground()
     {
         Graphics g = game.getGraphics();
-
-        if(backgroundY < 0)
+        if(back == false) {
+            if (backgroundY < 0) {
+                backgroundY += speed;
+            }
+            if (titleHeight < 620) {
+                titleHeight += 50;
+            }
+            g.drawRect(0, backgroundY, 1280, 720,Color.BLUE);
+        }
+        else
         {
-            backgroundY += speed;
-            titleHeight += speed;
-            g.drawRect(440, titleHeight, 400, 100, Color.BLACK);
+            backgroundY -= speed;
+            if (titleHeight > -100) {
+                titleHeight -= 50;
+            }
+            else
+            {
+                game.setScreen(new MainMenuScreen(game));
+            }
+            g.drawRect(0, backgroundY, 1280, 720,Color.GREEN);
         }
 
+        g.drawRect(440, titleHeight, 400, 100, Color.BLACK);
 
-        g.drawRect(0, backgroundY, 1280, 720,Color.BLUE);
     }
+
+    public void buttonCollider() {
+        Graphics g = game.getGraphics();
+        List<TouchEvent> touchEvents = game.getInput().getTouchEvents();
+        int len = touchEvents.size();
+        for (int i = 0; i < len; i++)
+        {
+            TouchEvent event = touchEvents.get(i);
+            if(event.type == TouchEvent.TOUCH_UP)
+            {
+                //Help
+                if(inBounds(event, 440, titleHeight, 400, 100))
+                {
+                    //Log.i("HelpScreen","Help Press");
+                    backgroundY = 720;
+                    back = true;
+                    return;
+                }
+            }
+        }
+    }
+
 
     @Override
     public void present(float deltaTime) {
