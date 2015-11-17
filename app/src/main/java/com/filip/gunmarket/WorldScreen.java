@@ -1,5 +1,6 @@
 package com.filip.gunmarket;
 
+import android.graphics.Color;
 import android.util.Log;
 
 import com.filip.androidgames.framework.Game;
@@ -58,6 +59,7 @@ public class WorldScreen extends Screen {
         //Assets.click.play(1);
         Graphics g = game.getGraphics();
         //g.drawPixmap(Assets.worldMap, 0, 0);
+        g.drawText("$1000K",10,710, Color.YELLOW,50);
     }
 
     @Override
