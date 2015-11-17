@@ -49,10 +49,10 @@ public class InventoryScreen extends Screen {
         g.drawText("Long gun", rowLeft+350, rowUp + 160, Color.WHITE, 30);
         g.drawText("Explosives", rowLeft+350, rowUp+240, Color.WHITE, 30);
 
-        g.drawText("Inventory", rowLeft+900, rowUp, Color.GREEN, 35);
-        g.drawText("0", rowLeft+900, rowUp + 80, Color.WHITE, 30);
-        g.drawText("0", rowLeft+900, rowUp + 160, Color.WHITE, 30);
-        g.drawText("0", rowLeft+900, rowUp+240, Color.WHITE, 30);
+        g.drawText("Inventory", rowLeft+700, rowUp, Color.GREEN, 35);
+        g.drawText("0", rowLeft+700, rowUp + 80, Color.WHITE, 30);
+        g.drawText("0", rowLeft+700, rowUp + 160, Color.WHITE, 30);
+        g.drawText("0", rowLeft+700, rowUp+240, Color.WHITE, 30);
 
 
 
