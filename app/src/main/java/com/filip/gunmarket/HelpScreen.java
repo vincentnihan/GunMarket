@@ -75,26 +75,41 @@ public class HelpScreen extends Screen {
         if(back == false) {
             if (backgroundX > 0) {
                 backgroundX -= 50;
+                if(backgroundX < 0)
+                    backgroundX = 0;
             }
             if (helpX > 0) {
                 helpX -= 50;
+                if (helpX < 0) {
+                    helpX = 0;
+                }
             }
-            g.drawRect(backgroundX, 0, 1280, 720,Color.BLUE);
+
+            g.drawPixmap(Assets.backgroundFrame, backgroundX, 0, 0, 0 , 1280, 720);
+            g.drawPixmap(Assets.helpBackground, backgroundX+25, 25, 0, 0, 1230, 670);
         }
         else
         {
             backgroundX += 50;
+            if(backgroundX > 1280) {
+                backgroundX = 1280;
+            }
             if (helpX <1280) {
                 helpX += 50;
+                if(helpX > 1280) {
+                    helpX = 1280;
+                }
+
             }
             else
             {
                 game.setScreen(new MainMenuScreen(game));
             }
-            g.drawRect(backgroundX, 0, 1280, 720,Color.GREEN);
+            g.drawPixmap(Assets.backgroundFrame, backgroundX, 0, 0, 0 , 1280, 720);
+            g.drawPixmap(Assets.menuBackground, backgroundX + 25, 25, 0, 0, 1230, 670);
         }
-        g.drawRect(helpX, 520, 200, 100, Color.YELLOW);
-
+        g.drawPixmap(Assets.buttonBackground, helpX, 520, 0, 0, 200, 100);
+        g.drawText("Help", helpX + 100, 520 + 50, Color.GREEN, 50);
     }
 
     public void buttonCollider() {

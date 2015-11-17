@@ -18,10 +18,14 @@ public class LoadingScreen extends Screen
     @Override
     public void update(float deltaTime) {
         Graphics g = game.getGraphics();
-        //Assets.menuBackground = g.newPixmap("mainmenuBackground.jpg", PixmapFormat.ARGB4444);
+        Assets.menuBackground = g.newPixmap("darkWorldmap.jpg", PixmapFormat.ARGB4444);
         //Assets.logo = g.newPixmap("logo.png", PixmapFormat.ARGB4444);
-        //Assets.buttonBackground = g.newPixmap("headleft.png", PixmapFormat.ARGB4444);
+        Assets.buttonBackground = g.newPixmap("ButtonBackground.jpg", PixmapFormat.ARGB4444);
+        Assets.topicBackground = g.newPixmap("TopicBackground.jpg", PixmapFormat.ARGB4444);
         Assets.worldMap = g.newPixmap("WorldMap.png", PixmapFormat.ARGB4444);
+        Assets.helpBackground = g.newPixmap("helpBackground.jpg", PixmapFormat.ARGB4444);
+        Assets.backgroundFrame = g.newPixmap("BackgroundFrame.jpg", PixmapFormat.ARGB4444);
+        Assets.creditBackground = g.newPixmap("creditBackground.jpg", PixmapFormat.ARGB4444);
         //Assets.frame = g.newPixmap("frame.jpg", PixmapFormat.ARGB4444);
         Assets.backButton = g.newPixmap("back.png", PixmapFormat.ARGB4444);
         //Assets.plusButton = g.newPixmap("plus.jpg", PixmapFormat.ARGB4444);

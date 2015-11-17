@@ -90,7 +90,8 @@ public class MainMenuScreen extends Screen {
     public void drawBackground()
     {
         Graphics g = game.getGraphics();
-        g.drawRect(0, 0, 1280, 720,Color.GREEN);
+        g.drawPixmap(Assets.backgroundFrame, 0, 0, 0, 0 , 1280, 720);
+        g.drawPixmap(Assets.menuBackground, 25, 25, 0, 0 , 1230, 670);
     }
     public void drawButton(float deltaTime)
     {
@@ -104,9 +105,12 @@ public class MainMenuScreen extends Screen {
         if(helpButtonX > 1080) {
             helpButtonX-= speed;
         }
-        g.drawRect(startButtonX, 520, 200, 100, Color.RED);
-        g.drawRect(helpButtonX, 520, 200, 100, Color.YELLOW);
-        g.drawRect(440, titleHeight, 400, 100, Color.BLACK);
+        g.drawPixmap(Assets.buttonBackground, startButtonX, 520, 0,0, 200, 100);
+        g.drawText("Start", startButtonX + 100, 520 + 50, Color.GREEN, 50);
+        g.drawPixmap(Assets.buttonBackground, helpButtonX, 520, 0, 0, 200, 100);
+        g.drawText("Help", helpButtonX + 100, 520 + 50, Color.GREEN, 50);
+        g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 400, 100);
+        g.drawText("Bringer of Peace", 440 + 200, titleHeight + 50, Color.GREEN, 50);
     }
     public void buttonCollider() {
         Graphics g = game.getGraphics();

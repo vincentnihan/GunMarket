@@ -75,27 +75,45 @@ public class CreditScreen extends Screen {
         if(back == false) {
             if (backgroundY < 0) {
                 backgroundY += speed;
+                if (backgroundY > 0) {
+                    backgroundY = 0;
+                }
             }
-            if (titleHeight < 620) {
+            if (titleHeight < 620)
+            {
                 titleHeight += 50;
+                if (titleHeight > 620)
+                {
+                    titleHeight = 620;
+                }
             }
-            g.drawRect(0, backgroundY, 1280, 720,Color.BLUE);
+            g.drawPixmap(Assets.backgroundFrame, 0, backgroundY, 0, 0 , 1280, 720);
+            g.drawPixmap(Assets.creditBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
+
         }
         else
         {
             backgroundY -= speed;
+            if(backgroundY <-720)
+            {
+                backgroundY = -720;
+            }
             if (titleHeight > -100) {
                 titleHeight -= 50;
+                if(titleHeight <-100)
+                {
+                    titleHeight = -100;
+                }
             }
             else
             {
                 game.setScreen(new MainMenuScreen(game));
             }
-            g.drawRect(0, backgroundY, 1280, 720,Color.GREEN);
+            g.drawPixmap(Assets.backgroundFrame, 0, backgroundY, 0, 0 , 1280, 720);
+            g.drawPixmap(Assets.menuBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
         }
-
-        g.drawRect(440, titleHeight, 400, 100, Color.BLACK);
-
+        g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 400, 100);
+        g.drawText("Bringer of Peace", 440 + 200, titleHeight + 50, Color.GREEN, 50);
     }
 
     public void buttonCollider() {
