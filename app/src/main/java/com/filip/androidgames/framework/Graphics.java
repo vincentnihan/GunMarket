@@ -13,6 +13,7 @@ public interface Graphics
     public void drawLine(int x, int y, int x2, int y2, int color);
     public void drawRect(int x, int y, int width, int height, int color);
     public void drawText(String words, int x, int y, int color, int size);
+    public void drawTextR(String words, int x, int y, int color, int size);
     public void drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight);
     public void drawPixmap(Pixmap pixmap, int x, int y);
     public void drawPixmap(Pixmap pixmap, int x, int y, int color);
