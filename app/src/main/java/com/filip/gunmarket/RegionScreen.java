@@ -4,7 +4,10 @@ import android.graphics.Color;
 
 import com.filip.androidgames.framework.Game;
 import com.filip.androidgames.framework.Graphics;
+import com.filip.androidgames.framework.Input;
 import com.filip.androidgames.framework.Screen;
+
+import java.util.List;
 
 /**
  * Created by Erdem on 2015-11-16.
@@ -17,16 +20,27 @@ public class RegionScreen extends Screen {
     int rowLeft = 100;
 
     int rowUp = 220;
-    public  void update(float deltaTime){
+    public  void update(float deltaTime) {
+        List<Input.TouchEvent> touchEvents = game.getInput().getTouchEvents();
 
+        int len = touchEvents.size();
+        for (int i = 0; i < len; i++) {
+            Input.TouchEvent event = touchEvents.get(i);
+            if (event.type == Input.TouchEvent.TOUCH_UP) {
+                if (inBounds(event, 1280-128, 720-128, 128, 128)) {
+                    game.setScreen(new WorldScreen(game));
+                }
+            }
+        }
     }
     public  void present(float deltaTime){
         Graphics g = game.getGraphics();
+
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
 
 
         //g.drawPixmap(Assets.worldMap, 0, 0);
-        g.drawPixmap(Assets.backButton, 1280-256,720-256);
+        g.drawPixmap(Assets.backButton, 1280-128,720-128);
         g.drawText("REGION NAME", 640, 75, Color.YELLOW, 70);
         //g.drawText("Connections: 0%", 640, 105, Color.WHITE, 30);
 
