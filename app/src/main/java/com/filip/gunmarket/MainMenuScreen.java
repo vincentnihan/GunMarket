@@ -112,18 +112,9 @@ public class MainMenuScreen extends Screen {
         }
         else if(buttonStage == 1)
         {
-            if(startButtonX < 1280)
-            {
-                startButtonX += speed ;
-                g.drawRect(startButtonX, 520, 200, 100, Color.RED);
-            }
             game.setScreen(new WorldScreen(game));
         }
         else if(buttonStage == 2) {
-            if (helpButtonX > -200) {
-                helpButtonX -= speed;
-                g.drawRect(helpButtonX, 520, 200, 100, Color.YELLOW);
-            }
             game.setScreen(new HelpScreen(game));
         }
         else if(buttonStage == 3)
