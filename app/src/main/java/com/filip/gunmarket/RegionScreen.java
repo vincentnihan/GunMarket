@@ -41,20 +41,20 @@ public class RegionScreen extends Screen {
 
         //g.drawPixmap(Assets.worldMap, 0, 0);
         g.drawPixmap(Assets.backButton, 1280-128,720-128);
-        g.drawText("REGION NAME", 640, 75, Color.YELLOW, 70);
+        g.drawText("REGION NAME", 640, 75, Color.GREEN, 70);
         //g.drawText("Connections: 0%", 640, 105, Color.WHITE, 30);
 
-        g.drawText("COUNTRY", rowLeft, rowUp, Color.WHITE, 35);
+        g.drawText("COUNTRY", rowLeft, rowUp, Color.GREEN, 35);
         g.drawText("Country1", rowLeft, rowUp+80, Color.WHITE, 30);
         g.drawText("Country2", rowLeft, rowUp + 160, Color.WHITE, 30);
         g.drawText("Country3", rowLeft, rowUp+240, Color.WHITE, 30);
 
-        g.drawText("CONNECTIONS", rowLeft+350, rowUp, Color.WHITE, 35);
+        g.drawText("CONNECTIONS", rowLeft+350, rowUp, Color.GREEN, 35);
         g.drawText("0%", rowLeft+350, rowUp+80, Color.WHITE, 30);
         g.drawText("0%", rowLeft+350, rowUp+160, Color.WHITE, 30);
         g.drawText("0%", rowLeft+350, rowUp+240, Color.WHITE, 30);
 
-        g.drawText("GOVERNMENT", rowLeft+700, rowUp, Color.WHITE, 35);
+        g.drawText("GOVERNMENT", rowLeft+700, rowUp, Color.GREEN, 35);
         g.drawText("Type1", rowLeft+700, rowUp+80, Color.WHITE, 30);
         g.drawText("Type2", rowLeft+700, rowUp+160, Color.WHITE, 30);
         g.drawText("Type3", rowLeft+700, rowUp+240, Color.WHITE, 30);

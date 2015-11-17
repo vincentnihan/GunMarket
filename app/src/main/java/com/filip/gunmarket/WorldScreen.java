@@ -54,6 +54,10 @@ public class WorldScreen extends Screen {
                     //MIDDLE EAST
                     game.setScreen(new RegionScreen(game));
                 }
+                if(inBounds(event, 640-120, 620,240,100)){
+                    // MIddle down button
+                    game.setScreen(new BuyScreen(game));
+                }
             }
         }
     }
@@ -64,8 +68,9 @@ public class WorldScreen extends Screen {
         //Assets.click.play(1);
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.worldMap, 0, 0);
-        g.drawText("$1000K", 90, 710, Color.YELLOW, 50);
-        g.drawText("Infl: 0", 1090,710, Color.YELLOW, 50);
+        g.drawText("$1000K", 90, 710, Color.GREEN, 50);
+        g.drawText("Infl: 0", 1090,710, Color.GREEN, 50);
+        g.drawText("Tap here for Buy Template", 640, 710, Color.GREEN, 30);
     }
 
     @Override

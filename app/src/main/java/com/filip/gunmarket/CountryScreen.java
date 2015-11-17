@@ -40,20 +40,20 @@ public class CountryScreen extends Screen {
         Graphics g = game.getGraphics();
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
 
-        g.drawText("COUNTRY NAME", 640, 75, Color.YELLOW, 70);
+        g.drawText("COUNTRY NAME", 640, 75, Color.GREEN, 70);
         g.drawText("Connections: 0%", 640, 105, Color.WHITE, 30);
 
-        g.drawText("Govnt Type", rowLeft, rowUp, Color.WHITE, 35);
-        g.drawText("Type1", rowLeft, rowUp+80, Color.WHITE, 30);
+        g.drawText("Govnt Type", rowLeft, rowUp, Color.GREEN, 35);
+        g.drawText("Type1", rowLeft, rowUp + 80, Color.WHITE, 30);
 
 
-        g.drawText("Govnt Power", rowLeft+350, rowUp, Color.WHITE, 35);
+        g.drawText("Govnt Power", rowLeft+350, rowUp, Color.GREEN, 35);
         g.drawText("60%", rowLeft+350, rowUp+80, Color.WHITE, 30);
 
-        g.drawText("Group 1 Power", rowLeft+700, rowUp, Color.WHITE, 35);
+        g.drawText("Group 1 Power", rowLeft+700, rowUp, Color.GREEN, 35);
         g.drawText("25%", rowLeft+700, rowUp+80, Color.WHITE, 30);
 
-        g.drawText("Group 2 Power", rowLeft+1050, rowUp, Color.WHITE, 35);
+        g.drawText("Group 2 Power", rowLeft+1050, rowUp, Color.GREEN, 35);
         g.drawText("15%", rowLeft+1050, rowUp+80, Color.WHITE, 30);
 
 
