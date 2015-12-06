@@ -10,8 +10,10 @@ import java.util.List;
 
 public class LoadingScreen extends Screen
 {
+    GameManager myManager;
     public LoadingScreen(Game game) {
         super(game);
+        myManager = game.getManager();
     }
 
 

@@ -17,7 +17,7 @@ public class BuyScreen extends Screen {
         super(game);
     }
 
-
+    
     int rowLeft = 100;
 
     int rowUp = 220;

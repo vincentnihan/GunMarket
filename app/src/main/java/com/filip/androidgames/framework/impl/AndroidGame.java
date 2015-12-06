@@ -15,6 +15,7 @@ import com.filip.androidgames.framework.Game;
 import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Input;
 import com.filip.androidgames.framework.Screen;
+import com.filip.gunmarket.GameManager;
 
 public abstract class AndroidGame extends Activity implements Game {
     AndroidFastRenderView renderView;
@@ -105,4 +106,7 @@ public abstract class AndroidGame extends Activity implements Game {
     public Screen getCurrentScreen() {
         return screen;
     }
+
+    public abstract GameManager getManager();
+
 }

@@ -1,6 +1,8 @@
 package com.filip.androidgames.framework;
 
-public interface Game 
+import com.filip.gunmarket.GameManager;
+
+public interface Game
 {
     public Input getInput();
     public FileIO getFileIO();
@@ -9,5 +11,8 @@ public interface Game
     public void setScreen(Screen screen);
     public Screen getCurrentScreen();
     public Screen getStartScreen();
+
+    public GameManager getManager();
+
 }
 

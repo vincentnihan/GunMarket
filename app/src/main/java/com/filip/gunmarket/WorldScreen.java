@@ -14,8 +14,12 @@ import java.util.List;
  * Created by Erdem on 2015-11-13.
  */
 public class WorldScreen extends Screen {
+    GameManager myManager;
+
+
     public WorldScreen(Game game) {
         super(game);
+        myManager = game.getManager();
     }
 
 
