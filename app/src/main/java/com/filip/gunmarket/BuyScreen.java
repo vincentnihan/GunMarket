@@ -13,11 +13,14 @@ import java.util.List;
  * Created by Erdem on 2015-11-17.
  */
 public class BuyScreen extends Screen {
+    GameManager myManager;
+
     public BuyScreen(Game game) {
         super(game);
+        myManager = game.getManager();
     }
 
-    
+
     int rowLeft = 100;
 
     int rowUp = 220;
@@ -41,7 +44,7 @@ public class BuyScreen extends Screen {
         Graphics g = game.getGraphics();
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
 
-        g.drawText("COUNTRY NAME", 640, 75, Color.GREEN, 70);
+        g.drawText(myManager.currentRegionName(), 640, 75, Color.GREEN, 70);
         g.drawText("Connections: 0%", 640, 105, Color.WHITE, 30);
 
         g.drawText("TRADE TYPE", rowLeft, rowUp, Color.GREEN, 35);
@@ -55,9 +58,9 @@ public class BuyScreen extends Screen {
         g.drawText("0", rowLeft+350, rowUp+240, Color.WHITE, 30);
 
         g.drawText("Inventory", rowLeft+700, rowUp, Color.GREEN, 35);
-        g.drawText("0", rowLeft+700, rowUp + 80, Color.WHITE, 30);
-        g.drawText("0", rowLeft+700, rowUp + 160, Color.WHITE, 30);
-        g.drawText("0", rowLeft+700, rowUp+240, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getHandGuns()), rowLeft+700, rowUp + 80, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getLongGuns()), rowLeft+700, rowUp + 160, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getExplosives()), rowLeft+700, rowUp+240, Color.WHITE, 30);
 
         g.drawText("BUY", rowLeft+1050, rowUp + 80, Color.YELLOW, 30);
         g.drawText("BUY", rowLeft+1050, rowUp + 160, Color.YELLOW, 30);
