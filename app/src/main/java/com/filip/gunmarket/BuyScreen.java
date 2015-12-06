@@ -52,15 +52,20 @@ public class BuyScreen extends Screen {
         g.drawText("Long gun", rowLeft, rowUp + 160, Color.WHITE, 30);
         g.drawText("Explosives", rowLeft, rowUp+240, Color.WHITE, 30);
 
-        g.drawText("Offered Amnt", rowLeft+350, rowUp, Color.GREEN, 35);
-        g.drawText("0", rowLeft+350, rowUp + 80, Color.WHITE, 30);
-        g.drawText("0", rowLeft+350, rowUp + 160, Color.WHITE, 30);
-        g.drawText("0", rowLeft+350, rowUp+240, Color.WHITE, 30);
+        g.drawText("Offered Amnt", rowLeft+250, rowUp, Color.GREEN, 35);
+        g.drawText("0", rowLeft+250, rowUp + 80, Color.WHITE, 30);
+        g.drawText("0", rowLeft+250, rowUp + 160, Color.WHITE, 30);
+        g.drawText("0", rowLeft+250, rowUp+240, Color.WHITE, 30);
 
-        g.drawText("Inventory", rowLeft+700, rowUp, Color.GREEN, 35);
-        g.drawText(String.valueOf(myManager.getHandGuns()), rowLeft+700, rowUp + 80, Color.WHITE, 30);
-        g.drawText(String.valueOf(myManager.getLongGuns()), rowLeft+700, rowUp + 160, Color.WHITE, 30);
-        g.drawText(String.valueOf(myManager.getExplosives()), rowLeft+700, rowUp+240, Color.WHITE, 30);
+        g.drawText("Inventory", rowLeft+500, rowUp, Color.GREEN, 35);
+        g.drawText(String.valueOf(myManager.getHandGuns()), rowLeft+500, rowUp + 80, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getLongGuns()), rowLeft+500, rowUp + 160, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getExplosives()), rowLeft+500, rowUp+240, Color.WHITE, 30);
+
+        g.drawText("Price", rowLeft + 750, rowUp, Color.GREEN, 35);
+        g.drawText(String.valueOf(myManager.getHandGunBuyPrice(true)), rowLeft+750, rowUp + 80, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getLongGunPrice(true)), rowLeft+750, rowUp + 160, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getExplosivePrice(true)), rowLeft+750, rowUp+240, Color.WHITE, 30);
 
         g.drawText("BUY", rowLeft+1050, rowUp + 80, Color.YELLOW, 30);
         g.drawText("BUY", rowLeft+1050, rowUp + 160, Color.YELLOW, 30);

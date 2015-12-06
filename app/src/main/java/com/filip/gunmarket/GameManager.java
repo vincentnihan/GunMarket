@@ -8,6 +8,10 @@ public class GameManager {
     int longGuns = 0;
     int explosives = 0;
 
+    int handGunPrice = 10;
+    int longGunPrice = 20;
+    int explosivePrice = 15;
+
     float connectionUSA = 0;
     float connectionEU = 0;
     float connectionRussia = 0;
@@ -25,10 +29,6 @@ public class GameManager {
 
     int currentRegion = 1;
 
-
-    public int getCurrentRegion() {
-        return currentRegion;
-    }
 
     public String currentRegionName(){
         String temp = "";
@@ -63,6 +63,17 @@ public class GameManager {
     public void changeMoney(int amount){
         money += amount;
     }
+
+    public int getHandGunBuyPrice(boolean isBuyScreen) {
+            return isBuyScreen ? handGunPrice-1 : handGunPrice+1;
+    }
+    public int getLongGunPrice(boolean isBuyScreen){
+        return  isBuyScreen ? longGunPrice-2 : longGunPrice+2;
+    }
+    public int getExplosivePrice(boolean isBuyScreen){
+        return isBuyScreen ? explosivePrice-2 : explosivePrice+2;
+    }
+
     public int getMoney() {
         return money;
     }
