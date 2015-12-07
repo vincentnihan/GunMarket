@@ -13,16 +13,19 @@ import java.util.List;
  * Created by Erdem on 2015-11-17.
  */
 public class EventScreen extends Screen {
+    GameManager myManager;
     public EventScreen(Game game, boolean Event) {
         super(game);
+        myManager = game.getManager();
         IsEvent = Event;
+
     }
 
     public boolean IsEvent;
-    public String eventTopic;
-    public String eventText;
-    public String optionA;
-    public String optionB;
+    public String eventTopic = "Topic";
+    public String eventText = "Event Text";
+    public String optionA = "Option A";
+    public String optionB = "Option B";
 
 
     public  void update(float deltaTime) {
