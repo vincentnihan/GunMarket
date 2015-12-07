@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class WorldScreen extends Screen {
     GameManager myManager;
-
+    int[] oppArray = new int[8];
 
     public WorldScreen(Game game) {
         super(game);
@@ -26,6 +26,8 @@ public int location;
 public int bubbleType;
     @Override
     public void update(float deltaTime) {
+        myManager.progressTime(deltaTime);
+
 
         List<Input.TouchEvent> touchEvents = game.getInput().getTouchEvents();
 
@@ -78,11 +80,30 @@ public int bubbleType;
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.worldMap, 0, 0);
         // call displayBubble after worldMap
+        /*
         for(int i  = 1; i<9; i++)
         {
             displayBubble(i,0);
         }
-        g.drawText("$1000K", 90, 710, Color.GREEN, 50);
+        */
+
+        //oppArray = myManager.getOpportunityArray();
+        /*
+        for (int i = 0; i < 8; i++){
+            if (myManager.getOpportunityArray()[i] == 1){
+                displayBubble(i+1,1);
+            }else if(myManager.getOpportunityArray()[i] == 2){
+                displayBubble(i+1, 2);
+            }
+        }
+        */
+
+        for (int i = 0; i < 8; i++) {
+            displayBubble(i+1,1);
+        }
+
+
+            g.drawText("$1000K", 90, 710, Color.GREEN, 50);
         g.drawText("Infl: 0", 90,710-50, Color.GREEN, 50);
         g.drawText("Tap here for Buy Template", 640, 710, Color.GREEN, 30);
         g.drawTextR("Inventory", 1270, 710, Color.GREEN, 50);

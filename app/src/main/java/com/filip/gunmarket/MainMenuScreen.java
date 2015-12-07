@@ -124,6 +124,8 @@ public class MainMenuScreen extends Screen {
             {
                 if(backgroundX + speed > 0) {
                     backgroundX = 0;
+                    // ERDEM - new turn at the start of the game
+                    game.getManager().newTurn();
                     game.setScreen(new WorldScreen(game));
                 }
                  else
