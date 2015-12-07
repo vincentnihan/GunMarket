@@ -28,7 +28,7 @@ public class GameManager {
     int year = 1990;
     int month = 1;
     float time = 0;
-    float turnTime = 1500;
+    float turnTime = 5;
 
 
     int influencePoints = 0;
@@ -45,11 +45,11 @@ public class GameManager {
                 int r = rand.nextInt(100)+1;
                 if (r < 35+getConnectionByNum(i+1)){
                     if(r%2 == 1)
-                        opportunityArray[0] = 1;
+                        opportunityArray[i] = 1;
                     else
-                        opportunityArray[0] = 2;
+                        opportunityArray[i] = 2;
                 }else{
-                    opportunityArray[0] = 0;
+                    opportunityArray[i] = 0;
                 }
 
 

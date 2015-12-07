@@ -88,22 +88,20 @@ public int bubbleType;
         */
 
         //oppArray = myManager.getOpportunityArray();
-        /*
+
         for (int i = 0; i < 8; i++){
             if (myManager.getOpportunityArray()[i] == 1){
-                displayBubble(i+1,1);
+                displayBubble(i+1,0);
             }else if(myManager.getOpportunityArray()[i] == 2){
-                displayBubble(i+1, 2);
+                displayBubble(i+1, 1);
             }
         }
-        */
-
-        for (int i = 0; i < 8; i++) {
-            displayBubble(i+1,1);
-        }
 
 
-            g.drawText("$1000K", 90, 710, Color.GREEN, 50);
+
+
+
+            g.drawText("$"+String.valueOf(myManager.getMoney())+"K", 90, 710, Color.GREEN, 50);
         g.drawText("Infl: 0", 90,710-50, Color.GREEN, 50);
         g.drawText("Tap here for Buy Template", 640, 710, Color.GREEN, 30);
         g.drawTextR("Inventory", 1270, 710, Color.GREEN, 50);
