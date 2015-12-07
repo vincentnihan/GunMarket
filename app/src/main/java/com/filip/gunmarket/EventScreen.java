@@ -41,11 +41,11 @@ public class EventScreen extends Screen {
             Input.TouchEvent event = touchEvents.get(i);
             if (event.type == Input.TouchEvent.TOUCH_UP) {
                 if(IsEvent == true) {
-                    if (inBounds(event, 350, 540, 128, 128)) {
+                    if (inBounds(event, 100, 390, 300, 300)) {
                         eventReply = 1;
                         game.setScreen(new WorldScreen(game));
                     }
-                    if (inBounds(event, 850, 540, 128, 128)) {
+                    if (inBounds(event, 700, 390, 300, 300)) {
                         eventReply = 2;
                         game.setScreen(new WorldScreen(game));
                     }
@@ -63,9 +63,9 @@ public class EventScreen extends Screen {
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
         if(IsEvent == true) {
             g.drawText(eventTopic, 640, 75, Color.GREEN, 70); //Event Topic
-            g.drawText(eventText1, 640, 220, Color.WHITE, 30); //Event
-            g.drawText(eventText2, 640, 260, Color.WHITE, 30); //Event
-            g.drawText(eventText3, 640, 300, Color.WHITE, 30); //Event
+            g.drawText(eventText1, 640, 220, Color.WHITE, 50); //Event
+            g.drawText(eventText2, 640, 300, Color.WHITE, 50); //Event
+            g.drawText(eventText3, 640, 370, Color.WHITE, 50); //Event
             g.drawText(optionB, 850, 540, Color.YELLOW, 50); // optionA
             g.drawText(optionA, 350, 540, Color.YELLOW, 50); // optionB
 
