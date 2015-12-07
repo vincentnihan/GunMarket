@@ -22,22 +22,16 @@ public class EventScreen extends Screen {
     }
 
     public boolean IsEvent;
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/Revert
     public int eventReply;
     public String eventTopic = "Topic";
     public String eventText = "Event Text";
     public String optionA = "Option A";
     public String optionB = "Option B";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/Revert
 
     public  void update(float deltaTime) {
+        
         List<Input.TouchEvent> touchEvents = game.getInput().getTouchEvents();
 
         int len = touchEvents.size();

@@ -28,6 +28,7 @@ public class GameManager {
     int year = 1990;
     int month = 1;
     float time = 0;
+    float turnTime = 15000;
 
 
     int influencePoints = 0;
