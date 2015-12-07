@@ -78,7 +78,7 @@ public int bubbleType;
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.worldMap, 0, 0);
         // call displayBubble after worldMap
-        for(int i  = 1; i<10; i++)
+        for(int i  = 1; i<9; i++)
         {
             displayBubble(i,0);
         }
