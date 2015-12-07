@@ -55,10 +55,12 @@ public class GameManager {
 
             }
 
+    }
 
 
 
-
+    public int[] getOpportunityArray() {
+        return opportunityArray;
     }
 
     public String currentRegionName(){
