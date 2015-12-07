@@ -57,7 +57,13 @@ public class GameManager {
 
     }
 
-
+    public void progressTime(float dTime){
+        time += dTime;
+        if (time >= turnTime){
+            time = 0;
+            newTurn();
+        }
+    }
 
     public int[] getOpportunityArray() {
         return opportunityArray;
