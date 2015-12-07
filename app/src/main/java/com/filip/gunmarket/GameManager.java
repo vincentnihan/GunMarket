@@ -36,9 +36,18 @@ public class GameManager {
 
     Random rand = new Random();
 
-    public int currentRegion = 1;
+    int currentRegion = 1;
 
     int[] opportunityArray = new int[8];
+
+    public int getCurrentRegion() {
+        return currentRegion;
+    }
+
+    public void setCurrentRegion(int currentRegion) {
+        this.currentRegion = currentRegion;
+    }
+
     public void newTurn(){
             for (int i = 0;i <8; i++ ){
 

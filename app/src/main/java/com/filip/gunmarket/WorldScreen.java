@@ -24,6 +24,30 @@ public class WorldScreen extends Screen {
 
 public int location;
 public int bubbleType;
+
+    public void openRegionScreen(int regionNum){
+        myManager.setCurrentRegion(regionNum);
+
+        switch (myManager.getOpportunityArray()[regionNum-1]){
+            case 0:
+                if(regionNum < 5)
+                    game.setScreen(new CountryScreen(game));
+                else
+                    game.setScreen(new RegionScreen(game));
+                break;
+            case 1:
+                if(regionNum < 5)
+                    game.setScreen(new BuyScreen(game));
+                else
+                    game.setScreen(new SellScreen(game));
+                break;
+            case 2:
+                game.setScreen(new EventScreen(game, true));
+        }
+
+    }
+
+
     @Override
     public void update(float deltaTime) {
         myManager.progressTime(deltaTime);
@@ -37,28 +61,33 @@ public int bubbleType;
             if(event.type == Input.TouchEvent.TOUCH_UP) {
                 if (inBounds(event, 80, 163,190 ,100)){
                     //USA TAPPED
-                    game.setScreen(new CountryScreen(game));
-                    //game.drawMainMenu();
+                    //game.setScreen(new CountryScreen(game));
+                    openRegionScreen(1);
                 }
                 if(inBounds(event,203,348,167,300)){
                     // SOUTH AMERICA
-                    game.setScreen(new RegionScreen(game));
+                    openRegionScreen(5);
+                    //game.setScreen(new RegionScreen(game));
                 }
                 if(inBounds(event,489,72,619-489,217-72 )){
                     // EUROPEAN UNION
-                    game.setScreen(new CountryScreen(game));
+                    openRegionScreen(2);
+                    //game.setScreen(new CountryScreen(game));
                 }
                 if(inBounds(event,620, 37, 1048-620,144-37)){
                     //RUSSIA
-                    game.setScreen(new CountryScreen(game));
+                    openRegionScreen(3);
+                    //game.setScreen(new CountryScreen(game));
                 }
                 if(inBounds(event,815,162,991-815,259-162)){
                     //CHINA
-                    game.setScreen(new CountryScreen(game));
+                    openRegionScreen(4);
+                    //game.setScreen(new CountryScreen(game));
                 }
                 if (inBounds(event,619,193,749-619, 293-193)){
                     //MIDDLE EAST
-                    game.setScreen(new RegionScreen(game));
+                    openRegionScreen(7);
+                    //game.setScreen(new RegionScreen(game));
                 }
                 if(inBounds(event, 640-120, 620,240,100)){
                     // MIddle down button
