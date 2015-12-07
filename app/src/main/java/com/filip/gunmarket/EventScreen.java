@@ -23,7 +23,7 @@ public class EventScreen extends Screen {
     public String eventText;
     public String optionA;
     public String optionB;
-
+    public int eventReply;
 
     public  void update(float deltaTime) {
         List<Input.TouchEvent> touchEvents = game.getInput().getTouchEvents();
@@ -34,7 +34,12 @@ public class EventScreen extends Screen {
             if (event.type == Input.TouchEvent.TOUCH_UP) {
                 if(IsEvent == true) {
                     if (inBounds(event, 1280 - 128, 720 - 128, 128, 128)) {
-                    game.setScreen(new WorldScreen(game));
+                        eventReply = 1;
+                        game.setScreen(new WorldScreen(game));
+                    }
+                    if (inBounds(event, 1280 - 128, 720 - 128, 128, 128)) {
+                        eventReply = 2;
+                        game.setScreen(new WorldScreen(game));
                     }
                 }
                 else
@@ -50,13 +55,13 @@ public class EventScreen extends Screen {
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
         if(IsEvent == true) {
 
-            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100); //frame
-            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100); //optionA frame
-            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100); //optionB frame
-            g.drawText(eventTopic, 500, 500, Color.BLACK, 50); //Event Topic
-            g.drawText(eventText, 500, 500, Color.BLACK, 50); //Event
-            g.drawText(optionA, 500, 500, Color.BLACK, 50); // optionA
-            g.drawText(optionB, 500, 500, Color.BLACK, 50); // optionB
+            g.drawPixmap(Assets.buttonBackground, 200, 60, 0, 0, 500, 500); //frame
+            g.drawPixmap(Assets.buttonBackground, 720, 100, 0, 0, 400, 200); //optionA frame
+            g.drawPixmap(Assets.buttonBackground, 720, 400, 0, 0, 400, 200); //optionB frame
+            g.drawText(eventTopic, 640, 75, Color.BLACK, 50); //Event Topic
+            g.drawText(eventText, 500, 310, Color.BLACK, 25); //Event
+            g.drawText(optionA, 920, 200, Color.BLACK, 50); // optionA
+            g.drawText(optionB, 920, 500, Color.BLACK, 50); // optionB
 
         }
         else
