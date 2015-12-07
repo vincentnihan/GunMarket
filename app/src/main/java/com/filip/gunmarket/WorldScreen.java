@@ -78,7 +78,7 @@ public int bubbleType;
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.worldMap, 0, 0);
         // call displayBubble after worldMap
-        for(int i  = 1; i<8; i++)
+        for(int i  = 1; i<10; i++)
         {
             displayBubble(i,0);
         }
@@ -106,16 +106,16 @@ public int bubbleType;
                     g.drawPixmap(Assets.tradeIcon, 900, 225, 0, 0, 50, 50); //CHINA
                     break;
                 case 5:
-                    g.drawPixmap(Assets.tradeIcon, 0, 0, 0, 0, 50, 50); // Latin America
+                    g.drawPixmap(Assets.tradeIcon, 275, 450, 0, 0, 50, 50); // Latin America
                     break;
                 case 6:
-                    g.drawPixmap(Assets.tradeIcon, 0, 0, 0, 0, 50, 50); // Africa
+                    g.drawPixmap(Assets.tradeIcon, 600, 300, 0, 0, 50, 50); // Africa
                     break;
                 case 7:
                     g.drawPixmap(Assets.tradeIcon, 645, 193, 0, 0, 50, 50); //MIDDLE EAST
                     break;
                 case 8:
-                    g.drawPixmap(Assets.tradeIcon, 275, 450, 0, 0, 50, 50);// SOUTH AMERICA
+                    g.drawPixmap(Assets.tradeIcon, 825, 275, 0, 0, 50, 50);// SOUTH ASIA
                     break;
             }
         }
