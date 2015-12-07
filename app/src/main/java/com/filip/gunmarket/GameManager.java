@@ -25,7 +25,9 @@ public class GameManager {
     float connectionMiddleE = 0;
     float connectionSouthAsia = 0;
 
-    float curDate = 0;
+    int year = 1990;
+    int month = 1;
+    float time = 0;
 
 
     int influencePoints = 0;
