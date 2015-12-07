@@ -209,4 +209,39 @@ public class GameManager {
         }
         return  0;
     }
+
+    void connectionChange(int location, int Val)
+    {
+        float temp = getConnectionByNum(location);
+        temp += Val;
+        if(temp > 1)
+        {
+            temp = 1;
+        }
+        else if (temp < 0)
+        {
+            temp = 0;
+        }
+        switch(location)
+        {
+            case 1:
+                connectionUSA = temp;
+            case 2:
+                connectionEU = temp;
+            case 3:
+                connectionRussia = temp;
+            case 4:
+                connectionChina = temp;
+            case 5:
+                connectionLatin = temp;
+            case 6:
+                connectionAfrica = temp;
+            case 7:
+                connectionMiddleE = temp;
+            case 8:
+                connectionSouthAsia = temp;
+
+        }
+    }
+
 }
