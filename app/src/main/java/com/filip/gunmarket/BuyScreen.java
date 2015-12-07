@@ -63,7 +63,7 @@ public class BuyScreen extends Screen {
         g.drawText(String.valueOf(myManager.getExplosives()), rowLeft+500, rowUp+240, Color.WHITE, 30);
 
         g.drawText("Price", rowLeft + 750, rowUp, Color.GREEN, 35);
-        g.drawText(String.valueOf(myManager.getHandGunBuyPrice(true)), rowLeft+750, rowUp + 80, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getHandGunPrice(true)), rowLeft+750, rowUp + 80, Color.WHITE, 30);
         g.drawText(String.valueOf(myManager.getLongGunPrice(true)), rowLeft+750, rowUp + 160, Color.WHITE, 30);
         g.drawText(String.valueOf(myManager.getExplosivePrice(true)), rowLeft+750, rowUp+240, Color.WHITE, 30);
 
