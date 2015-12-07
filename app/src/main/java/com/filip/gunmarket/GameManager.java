@@ -64,7 +64,7 @@ public class GameManager {
         money += amount;
     }
 
-    public int getHandGunBuyPrice(boolean isBuyScreen) {
+    public int getHandGunPrice(boolean isBuyScreen) {
             return isBuyScreen ? handGunPrice-1 : handGunPrice+1;
     }
     public int getLongGunPrice(boolean isBuyScreen){
@@ -73,7 +73,30 @@ public class GameManager {
     public int getExplosivePrice(boolean isBuyScreen){
         return isBuyScreen ? explosivePrice-2 : explosivePrice+2;
     }
-
+    public void sellHandGun(){
+        handGuns--;
+        changeMoney(getHandGunPrice(false));
+    }
+    public void sellLongGun(){
+        longGuns--;
+        changeMoney(getLongGunPrice(false));
+    }
+    public  void sellExplosives(){
+        explosives--;
+        changeMoney(getExplosivePrice(false));
+    }
+    public void buyHandGun(){
+        handGuns++;
+        changeMoney(getHandGunPrice(true));
+    }
+    public void buyLongGun(){
+        longGuns++;
+        changeMoney(getLongGunPrice(true));
+    }
+    public  void buyExplosives(){
+        explosives++;
+        changeMoney(getExplosivePrice(true));
+    }
     public int getMoney() {
         return money;
     }

@@ -36,6 +36,9 @@ public class SellScreen extends Screen {
                 if (inBounds(event, 1280 - 128, 720 - 128, 128, 128)) {
                     game.setScreen(new WorldScreen(game));
                 }
+                if (inBounds(event, rowLeft+950, rowUp+80, 100, 50)){
+                    
+                }
             }
         }
 
