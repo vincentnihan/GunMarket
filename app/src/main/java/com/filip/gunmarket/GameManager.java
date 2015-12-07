@@ -23,11 +23,13 @@ public class GameManager {
     float connectionMiddleE = 0;
     float connectionSouthAsia = 0;
 
+    float curDate = 0;
+
 
     int influencePoints = 0;
     int money = 1000;
 
-    int currentRegion = 1;
+    public int currentRegion = 1;
 
 
     public String currentRegionName(){
