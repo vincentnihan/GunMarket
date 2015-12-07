@@ -37,9 +37,15 @@ public class GameManager {
 
     int[] opportunityArray = new int[8];
     public void newTurn(){
+
             int r = rand.nextInt(100)+1;
             if (r < 20+getConnectionUSA()){
-                
+                if(r%2 == 1)
+                    opportunityArray[1] = 2;
+                else
+                    opportunityArray[1] = 1;
+            }else{
+                opportunityArray[1] = 0;
             }
 
 
@@ -90,6 +96,9 @@ public class GameManager {
     public int getExplosivePrice(boolean isBuyScreen){
         return isBuyScreen ? explosivePrice-2 : explosivePrice+2;
     }
+
+
+
     public void sellHandGun(){
         handGuns--;
         changeMoney(getHandGunPrice(false));
@@ -161,5 +170,27 @@ public class GameManager {
 
     public float getConnectionUSA() {
         return connectionUSA;
+    }
+
+    public float getConnectionByNum(int num){
+        switch (num){
+            case 1:
+                return getConnectionUSA();
+            case 2:
+                return  getConnectionEU();
+            case 3:
+                return getConnectionRussia();
+            case 4:
+                return getConnectionChina();
+            case 5:
+                return getConnectionLatin();
+            case 6:
+                return  getConnectionAfrica();
+            case 7:
+                return  getConnectionMiddleE();
+            case 8:
+                return  getConnectionSouthAsia();
+        }
+        return  0;
     }
 }
