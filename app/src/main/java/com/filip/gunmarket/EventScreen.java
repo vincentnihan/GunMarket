@@ -22,19 +22,12 @@ public class EventScreen extends Screen {
     }
 
     public boolean IsEvent;
-<<<<<<< HEAD
-    public String eventTopic;
-    public String eventText;
-    public String optionA;
-    public String optionB;
     public int eventReply;
-=======
     public String eventTopic = "Topic";
     public String eventText = "Event Text";
     public String optionA = "Option A";
     public String optionB = "Option B";
 
->>>>>>> origin/Revert
 
     public  void update(float deltaTime) {
         List<Input.TouchEvent> touchEvents = game.getInput().getTouchEvents();
@@ -65,14 +58,12 @@ public class EventScreen extends Screen {
         Graphics g = game.getGraphics();
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
         if(IsEvent == true) {
-
-            g.drawPixmap(Assets.buttonBackground, 200, 60, 0, 0, 500, 500); //frame
-            g.drawPixmap(Assets.buttonBackground, 720, 100, 0, 0, 400, 200); //optionA frame
-            g.drawPixmap(Assets.buttonBackground, 720, 400, 0, 0, 400, 200); //optionB frame
-            g.drawText(eventTopic, 640, 75, Color.BLACK, 50); //Event Topic
-            g.drawText(eventText, 500, 310, Color.BLACK, 25); //Event
-            g.drawText(optionA, 920, 200, Color.BLACK, 50); // optionA
-            g.drawText(optionB, 920, 500, Color.BLACK, 50); // optionB
+            g.drawText(eventTopic, 640, 75, Color.GREEN, 70); //Event Topic
+            g.drawText(eventText, 100, 220, Color.WHITE, 30); //Event
+            //g.drawText(eventText, 140, 220, Color.WHITE, 30); //Event
+            //g.drawText(eventText, 180, 220, Color.WHITE, 30); //Event
+            g.drawText(optionA, 850, 540, Color.BLACK, 50); // optionA
+            g.drawText(optionB, 350, 540, Color.BLACK, 50); // optionB
 
         }
         else
