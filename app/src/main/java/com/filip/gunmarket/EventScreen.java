@@ -19,6 +19,7 @@ public class EventScreen extends Screen {
     }
 
     public boolean IsEvent;
+    public String eventTopic;
     public String eventText;
     public String optionA;
     public String optionB;
@@ -46,14 +47,16 @@ public class EventScreen extends Screen {
 
     public void present(float deltaTime) {
         Graphics g = game.getGraphics();
+        g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
         if(IsEvent == true) {
-            g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
-            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100);
-            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100);
-            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100);
-            g.drawText(eventText, 500, 500, Color.BLACK, 50);
-            g.drawText(optionA, 500, 500, Color.BLACK, 50);
-            g.drawText(optionB, 500, 500, Color.BLACK, 50);
+
+            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100); //frame
+            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100); //optionA frame
+            g.drawPixmap(Assets.buttonBackground, 0, 520, 0, 0, 200, 100); //optionB frame
+            g.drawText(eventTopic, 500, 500, Color.BLACK, 50); //Event Topic
+            g.drawText(eventText, 500, 500, Color.BLACK, 50); //Event
+            g.drawText(optionA, 500, 500, Color.BLACK, 50); // optionA
+            g.drawText(optionB, 500, 500, Color.BLACK, 50); // optionB
 
         }
         else
