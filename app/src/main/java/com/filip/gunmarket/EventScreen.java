@@ -77,7 +77,7 @@ public class EventScreen extends Screen {
 
 
 
-        g.drawPixmap(Assets.backButton, 1280 - 128, 720 - 128);
+        //g.drawPixmap(Assets.backButton, 1280 - 128, 720 - 128);
     }
 
     public  void pause(){

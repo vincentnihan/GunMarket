@@ -103,13 +103,13 @@ public int bubbleType;
                     g.drawPixmap(Assets.tradeIcon, 780, 85, 0, 0, 50, 50); //RUSSIA
                     break;
                 case 4:
-                    g.drawPixmap(Assets.tradeIcon, 900, 225, 0, 0, 50, 50); //CHINA
+                    g.drawPixmap(Assets.tradeIcon, 900, 200, 0, 0, 50, 50); //CHINA
                     break;
                 case 5:
                     g.drawPixmap(Assets.tradeIcon, 275, 450, 0, 0, 50, 50); // Latin America
                     break;
                 case 6:
-                    g.drawPixmap(Assets.tradeIcon, 600, 300, 0, 0, 50, 50); // Africa
+                    g.drawPixmap(Assets.tradeIcon, 525, 325, 0, 0, 50, 50); // Africa
                     break;
                 case 7:
                     g.drawPixmap(Assets.tradeIcon, 645, 193, 0, 0, 50, 50); //MIDDLE EAST
@@ -132,19 +132,19 @@ public int bubbleType;
                     g.drawPixmap(Assets.eventIcon, 780, 85, 0, 0, 50, 50); //RUSSIA
                     break;
                 case 4:
-                    g.drawPixmap(Assets.eventIcon, 900, 225, 0, 0, 50, 50); //CHINA
+                    g.drawPixmap(Assets.eventIcon, 900, 200, 0, 0, 50, 50); //CHINA
                     break;
                 case 5:
-                    g.drawPixmap(Assets.eventIcon, 0, 0, 0, 0, 50, 50); // Latin America
+                    g.drawPixmap(Assets.eventIcon, 275, 450, 0, 0, 50, 50); // Latin America
                     break;
                 case 6:
-                    g.drawPixmap(Assets.eventIcon, 0, 0, 0, 0, 50, 50); // Africa
+                    g.drawPixmap(Assets.eventIcon, 525, 325, 0, 0, 50, 50); // Africa
                     break;
                 case 7:
                     g.drawPixmap(Assets.eventIcon, 645, 193, 0, 0, 50, 50); //MIDDLE EAST
                     break;
                 case 8:
-                    g.drawPixmap(Assets.eventIcon, 275, 450, 0, 0, 50, 50);// SOUTH AMERICA
+                    g.drawPixmap(Assets.eventIcon, 825, 275, 0, 0, 50, 50);// SOUTH ASIA
                     break;
             }
         }
