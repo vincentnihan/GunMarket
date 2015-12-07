@@ -1,5 +1,7 @@
 package com.filip.gunmarket;
 
+import java.util.Random;
+
 /**
  * Created by Erdem on 2015-12-06.
  */
@@ -29,8 +31,21 @@ public class GameManager {
     int influencePoints = 0;
     int money = 1000;
 
+    Random rand = new Random();
+
     public int currentRegion = 1;
 
+    int[] opportunityArray = new int[8];
+    public void newTurn(){
+            int r = rand.nextInt(100)+1;
+            if (r < 20+getConnectionUSA()){
+                
+            }
+
+
+
+
+    }
 
     public String currentRegionName(){
         String temp = "";
