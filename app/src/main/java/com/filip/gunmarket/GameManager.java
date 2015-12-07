@@ -37,16 +37,21 @@ public class GameManager {
 
     int[] opportunityArray = new int[8];
     public void newTurn(){
+            for (int i = 0;i <8; i++ ){
 
-            int r = rand.nextInt(100)+1;
-            if (r < 20+getConnectionUSA()){
-                if(r%2 == 1)
-                    opportunityArray[1] = 2;
-                else
-                    opportunityArray[1] = 1;
-            }else{
-                opportunityArray[1] = 0;
+                int r = rand.nextInt(100)+1;
+                if (r < 20+getConnectionByNum(i+1)){
+                    if(r%2 == 1)
+                        opportunityArray[0] = 2;
+                    else
+                        opportunityArray[0] = 1;
+                }else{
+                    opportunityArray[0] = 0;
+                }
+
+
             }
+
 
 
 
