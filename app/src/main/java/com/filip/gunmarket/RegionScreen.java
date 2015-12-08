@@ -36,6 +36,12 @@ public class RegionScreen extends Screen {
                 if (inBounds(event, 1280-128, 720-128, 128, 128)) {
                     game.setScreen(new WorldScreen(game));
                 }
+                if (inBounds(event,rowLeft+950, rowUp+(rowP-50),200, 100)) {
+                    myManager.investHawk();
+                }
+                if (inBounds(event,rowLeft+950, rowUp+(rowP*3)-50,200, 100)){
+                    myManager.investDove();
+                }
             }
         }
     }
@@ -53,17 +59,17 @@ public class RegionScreen extends Screen {
 
 
 
-        g.drawText("Inventory", rowLeft+500, rowUp, Color.GREEN, 35);
-        g.drawText("$10K and 1 Influence pt for 15% connection", rowLeft+500, rowUp + rowP, Color.WHITE, 30);
-        g.drawText("$10K and 1 Influence pt for -3% Doomsday counter", rowLeft+500, rowUp + rowP*3, Color.WHITE, 30);
+        g.drawText("$10K and 3 Influence pt for 15% connection", rowLeft + 500, rowUp + rowP, Color.WHITE, 30);
+        g.drawText("$10K and 3 Influence pt for -3% Doomsday counter", rowLeft+500, rowUp + rowP*3, Color.WHITE, 30);
 
 
         g.drawText("INVEST", rowLeft+1050, rowUp + rowP, Color.YELLOW, 30);
         g.drawText("INVEST", rowLeft+1050, rowUp + rowP*3, Color.YELLOW, 30);
 
 
-        g.drawText("Infl: "+String.valueOf(myManager.getInfluencePoints()), 90,710-50, Color.WHITE, 50);
-        g.drawText("DoomsDay: "+String.valueOf((int)(myManager.getDoomsdayCounter()*100))+"%", 640, 710, Color.WHITE, 30);
+        g.drawTextL("Influence: "+String.valueOf(myManager.getInfluencePoints()), 5,710, Color.WHITE, 50);
+        g.drawText("DoomsDay: "+String.valueOf((int)(myManager.getDoomsdayCounter()*100))+"%", 640, 710, Color.WHITE, 50);
+        g.drawPixmap(Assets.backButton, 1280 - 128, 720 - 128);
 
     }
     public  void pause(){

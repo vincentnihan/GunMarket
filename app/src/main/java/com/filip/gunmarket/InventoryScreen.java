@@ -44,7 +44,7 @@ public class InventoryScreen extends Screen {
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
 
         g.drawText("INVENTORY", 640, 75, Color.GREEN, 70);
-        g.drawText("$"+String.valueOf(myManager.getMoney()), 640, 105, Color.WHITE, 30);
+        g.drawText("$"+String.valueOf(myManager.getMoney())+"K", 640, 105, Color.WHITE, 30);
 
         g.drawText("TRADE TYPE", rowLeft+350, rowUp, Color.GREEN, 35);
         g.drawText("Handgun", rowLeft+350, rowUp + 80, Color.WHITE, 30);

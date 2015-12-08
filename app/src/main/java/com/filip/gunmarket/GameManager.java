@@ -42,6 +42,21 @@ public class GameManager {
 
     int[] opportunityArray = new int[8];
 
+    public void investHawk(){
+        if(money>=10 && influencePoints>= 3){
+            changeMoney(-10);
+            changeInfluencePoints(-3);
+            connectionChange(currentRegion, 0.15f);
+        }
+    }
+    public void investDove(){
+        if (money>= 10 && influencePoints >= 3){
+            changeMoney(-10);
+            changeInfluencePoints(-3);
+            changeDoomsdayCounter(-0.03f);
+        }
+    }
+
     public int getCurrentRegion() {
         return currentRegion;
     }
