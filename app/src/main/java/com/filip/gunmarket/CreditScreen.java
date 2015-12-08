@@ -92,7 +92,7 @@ public class CreditScreen extends Screen {
             }
             g.drawPixmap(Assets.backgroundFrame, 0, backgroundY, 0, 0 , 1280, 720);
             g.drawPixmap(Assets.creditBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
-            g.drawPixmap(Assets.helpTextFrame, 340,backgroundY+60, 0, 0 , 600, 400);
+            g.drawPixmap(Assets.creditTextFrame, 340,backgroundY+60, 0, 0 , 600, 400);
             g.drawText("Credit", 640, backgroundY + 130, Color.GREEN, 50);
             g.drawText("Vincent Ni",640, backgroundY+180, Color.WHITE, 25);
             g.drawText("Mehmet Erdem Gunay",640, backgroundY+230, Color.WHITE, 25);

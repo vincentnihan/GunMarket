@@ -22,7 +22,7 @@ public class BuyScreen extends Screen {
     int regionNum = 1;
     float connections = 0;
 
-    Boolean tipsDisplay;
+    Boolean tipsDisplay = false;
     float displayTime;
     Random rand = new Random();
 
@@ -49,24 +49,27 @@ public class BuyScreen extends Screen {
         if (handGunOffer>0 && myManager.getMoney() >= myManager.getHandGunPrice(true)){
             myManager.buyHandGun();
             handGunOffer--;
+        }else if (handGunOffer == 0){
+            tipsDisplay = true;
         }
-        tipsDisplay = true;
+
     }
     void buyLongGun(){
         if (longGunOffer>0 && myManager.getMoney() >= myManager.getLongGunPrice(true)){
             myManager.buyLongGun();
             longGunOffer--;
-        }
-        else
+        }else if (handGunOffer == 0){
             tipsDisplay = true;
+        }
     }
     void buyExplosives(){
         if (explosiveOffer>0 && myManager.getMoney() >= myManager.getExplosivePrice(true)){
             myManager.buyExplosives();;
             explosiveOffer--;
         }
-        else
+        else if (handGunOffer == 0){
             tipsDisplay = true;
+        }
     }
 
     int rowLeft = 100;

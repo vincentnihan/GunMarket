@@ -22,6 +22,7 @@ public class Assets {
     public static Pixmap creditBackground;
     public static Pixmap helpBackground;
     public static Pixmap helpTextFrame;
+    public static Pixmap creditTextFrame;
     public static Pixmap nuclearPic;
 
     public static Sound Background1;

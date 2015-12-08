@@ -93,11 +93,11 @@ public class HelpScreen extends Screen {
             g.drawPixmap(Assets.helpBackground, backgroundX+25, 25, 0, 0, 1230, 670);
             g.drawPixmap(Assets.helpTextFrame, backgroundX+25,60, 0, 0 , 1230, 400);
             g.drawText("Introduction", backgroundX + 640, 130, Color.GREEN, 50);
-            g.drawText("You're a gun dealer about to get into the world of weapon market. The game start at 1990 and each month",backgroundX+640, 180, Color.WHITE, 25);
-            g.drawText("will only last 10s. Bubbles will appear representing business opportunities.",backgroundX+640, 230, Color.WHITE, 25);
+            g.drawText("You're a gun dealer about to get into the world of weapon market. The game start at 1990.",backgroundX+640, 180, Color.WHITE, 25);
+            g.drawText("Each month will last 10 seconds. Bubbles will appear representing business opportunities.",backgroundX+640, 230, Color.WHITE, 25);
             g.drawText("Tapping on regions without a bubble will bring up political investment screen.", backgroundX + 640, 280, Color.WHITE, 25);
-            g.drawText("Trading too much weapon will cost world domination, trade less will lead to bankruptcy.", backgroundX + 640, 330, Color.WHITE, 25);
-            g.drawText("You have to manage to survive until 2015 which is your retire year.", backgroundX + 640, 380, Color.WHITE, 25);
+            g.drawText("Trading weapons will increase the DoomsDay counter and will bring World War 3 closer.", backgroundX + 640, 330, Color.WHITE, 25);
+            g.drawText("Your goal is to save much money as possible before 2015, without bringing the DoomsDay.", backgroundX + 640, 380, Color.WHITE, 25);
         }
         else
         {

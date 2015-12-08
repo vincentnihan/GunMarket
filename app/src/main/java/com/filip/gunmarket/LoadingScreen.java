@@ -21,12 +21,12 @@ public class LoadingScreen extends Screen
     public void update(float deltaTime) {
         Graphics g = game.getGraphics();
 
-        Assets.Background1  = game.getAudio().newSound("Background1.mp3");
+        Assets.Background1  = game.getAudio().newSound("Background1.ogg");
         //Assets.Background2 = game.getAudio().newSound("Background2.mp3");
         //Assets.Background3 = game.getAudio().newSound("Background3.mp3");
-        Assets.menuSlide = game.getAudio().newSound("Menu.mp3");
-        Assets.bubblePop = game.getAudio().newSound("Bubble Pop.mp3");
-        Assets.bubbleForm = game.getAudio().newSound("Bubble Forming.mp3");
+        Assets.menuSlide = game.getAudio().newSound("Menu.ogg");
+        Assets.bubblePop = game.getAudio().newSound("BubblePop.ogg");
+        Assets.bubbleForm = game.getAudio().newSound("BubbleForming.ogg");
 
 
         Assets.menuBackground = g.newPixmap("darkWorldmap.jpg", PixmapFormat.ARGB4444);
@@ -42,6 +42,7 @@ public class LoadingScreen extends Screen
         Assets.backgroundFrame = g.newPixmap("BackgroundFrame.jpg", PixmapFormat.ARGB4444);
         Assets.creditBackground = g.newPixmap("creditBackground.jpg", PixmapFormat.ARGB4444);
         Assets.helpTextFrame = g.newPixmap("HelpTextFrame.jpg" , PixmapFormat.ARGB4444);
+        Assets.creditTextFrame = g.newPixmap("CreditTextFrame.jpg" , PixmapFormat.ARGB4444);
         //Assets.frame = g.newPixmap("frame.jpg", PixmapFormat.ARGB4444);
         Assets.backButton = g.newPixmap("back.png", PixmapFormat.ARGB4444);
         //Assets.plusButton = g.newPixmap("plus.jpg", PixmapFormat.ARGB4444);
