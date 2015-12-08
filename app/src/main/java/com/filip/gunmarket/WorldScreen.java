@@ -42,9 +42,6 @@ public int bubbleType;
 
         switch (myManager.getOpportunityArray()[regionNum-1]){
             case 0:
-                if(regionNum < 5)
-                    game.setScreen(new CountryScreen(game));
-                else
                     game.setScreen(new RegionScreen(game));
                 break;
             case 1:

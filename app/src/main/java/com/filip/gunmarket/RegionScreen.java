@@ -13,13 +13,19 @@ import java.util.List;
  * Created by Erdem on 2015-11-16.
  */
 public class RegionScreen extends Screen {
+    GameManager myManager;
+    int regionNum = 1;
     public RegionScreen(Game game) {
         super(game);
+        myManager = game.getManager();
+        regionNum = myManager.getCurrentRegion();
     }
 
     int rowLeft = 100;
+    int rowP = 65;
+    int rowUp = 200;
 
-    int rowUp = 220;
+
     public  void update(float deltaTime) {
         List<Input.TouchEvent> touchEvents = game.getInput().getTouchEvents();
 
@@ -39,25 +45,25 @@ public class RegionScreen extends Screen {
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
 
 
-        //g.drawPixmap(Assets.worldMap, 0, 0);
-        g.drawPixmap(Assets.backButton, 1280-128,720-128);
-        g.drawText("REGION NAME", 640, 75, Color.GREEN, 70);
-        //g.drawText("Connections: 0%", 640, 105, Color.WHITE, 30);
+        g.drawText(myManager.currentRegionName(), 640, 75, Color.GREEN, 70);
+        g.drawText("Connections: " + String.valueOf((int) (myManager.getConnectionByNum(regionNum) * 100)) + "%", 640, 105, Color.WHITE, 30);
 
-        g.drawText("COUNTRY", rowLeft, rowUp, Color.GREEN, 35);
-        g.drawText("Country1", rowLeft, rowUp+80, Color.WHITE, 30);
-        g.drawText("Country2", rowLeft, rowUp + 160, Color.WHITE, 30);
-        g.drawText("Country3", rowLeft, rowUp+240, Color.WHITE, 30);
+        g.drawText("HAWK Politics", rowLeft, rowUp + rowP, Color.GREEN, 30);
+        g.drawText("DOVE Politics", rowLeft, rowUp + rowP*3, Color.GREEN, 30);
 
-        g.drawText("CONNECTIONS", rowLeft+350, rowUp, Color.GREEN, 35);
-        g.drawText("0%", rowLeft+350, rowUp+80, Color.WHITE, 30);
-        g.drawText("0%", rowLeft+350, rowUp+160, Color.WHITE, 30);
-        g.drawText("0%", rowLeft+350, rowUp+240, Color.WHITE, 30);
 
-        g.drawText("GOVERNMENT", rowLeft+700, rowUp, Color.GREEN, 35);
-        g.drawText("Type1", rowLeft+700, rowUp+80, Color.WHITE, 30);
-        g.drawText("Type2", rowLeft+700, rowUp+160, Color.WHITE, 30);
-        g.drawText("Type3", rowLeft+700, rowUp+240, Color.WHITE, 30);
+
+        g.drawText("Inventory", rowLeft+500, rowUp, Color.GREEN, 35);
+        g.drawText("$10K and 1 Influence pt for 15% connection", rowLeft+500, rowUp + rowP, Color.WHITE, 30);
+        g.drawText("$10K and 1 Influence pt for -3% Doomsday counter", rowLeft+500, rowUp + rowP*3, Color.WHITE, 30);
+
+
+        g.drawText("INVEST", rowLeft+1050, rowUp + rowP, Color.YELLOW, 30);
+        g.drawText("INVEST", rowLeft+1050, rowUp + rowP*3, Color.YELLOW, 30);
+
+
+        g.drawText("Infl: "+String.valueOf(myManager.getInfluencePoints()), 90,710-50, Color.WHITE, 50);
+        g.drawText("DoomsDay: "+String.valueOf((int)(myManager.getDoomsdayCounter()*100))+"%", 640, 710, Color.WHITE, 30);
 
     }
     public  void pause(){
