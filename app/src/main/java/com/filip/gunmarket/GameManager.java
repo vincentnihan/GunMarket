@@ -6,6 +6,8 @@ import java.util.Random;
  * Created by Erdem on 2015-12-06.
  */
 public class GameManager {
+    float doomsdayCounter = 0;
+
     int handGuns = 0;
     int longGuns = 0;
     int explosives = 0;
@@ -48,7 +50,20 @@ public class GameManager {
         this.currentRegion = currentRegion;
     }
 
+    public void changeDoomsdayCounter(float amount){
+        doomsdayCounter+= amount;
+
+        if (doomsdayCounter<0)
+            doomsdayCounter=0;
+    }
+
     public void newTurn(){
+        if (doomsdayCounter >= 1){
+            //END GAME
+        }
+
+
+
             for (int i = 0;i <8; i++ ){
 
                 int r = rand.nextInt(100)+1;
@@ -110,6 +125,7 @@ public class GameManager {
     }
     public void changeMoney(int amount){
         money += amount;
+
     }
 
     public int getHandGunPrice(boolean isBuyScreen) {
@@ -125,37 +141,48 @@ public class GameManager {
 
 
     public void sellHandGun(){
+        changeDoomsdayCounter(0.001f);
+
         handGuns--;
         changeMoney(getHandGunPrice(false));
         if (getConnectionByNum(currentRegion) < 0.4f)
         connectionChange(currentRegion, 0.01f);
     }
     public void sellLongGun(){
+        changeDoomsdayCounter(0.001f);
         longGuns--;
         changeMoney(getLongGunPrice(false));
         connectionChange(currentRegion, 0.015f);
     }
     public  void sellExplosives(){
+        changeDoomsdayCounter(0.001f);
         explosives--;
         changeMoney(getExplosivePrice(false));
     }
     public void buyHandGun(){
+        changeDoomsdayCounter(0.001f);
         handGuns++;
         changeMoney(-getHandGunPrice(true));
         if (getConnectionByNum(currentRegion) < 0.4f)
             connectionChange(currentRegion, 0.01f);
     }
     public void buyLongGun(){
+        changeDoomsdayCounter(0.001f);
         longGuns++;
         changeMoney(-getLongGunPrice(true));
         connectionChange(currentRegion, 0.015f);
     }
     public  void buyExplosives(){
+        changeDoomsdayCounter(0.001f);
         explosives++;
         changeMoney(-getExplosivePrice(true));
     }
     public int getMoney() {
         return money;
+    }
+
+    public float getDoomsdayCounter() {
+        return doomsdayCounter;
     }
 
     public int getHandGuns(){
@@ -169,6 +196,9 @@ public class GameManager {
     }
     public int getInfluencePoints(){
         return  influencePoints;
+    }
+    public void changeInfluencePoints(int amount){
+        influencePoints+= amount;
     }
 
     public float getConnectionAfrica() {
@@ -228,6 +258,11 @@ public class GameManager {
     void connectionChange(int location, float Val)
     {
         float temp = getConnectionByNum(location);
+
+        //ERDEM - influence stuff
+        if (Val>0 && temp>0.5f)
+            changeInfluencePoints(1);
+
         temp += Val;
         if(temp > 1)
         {

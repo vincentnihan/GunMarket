@@ -36,13 +36,16 @@ public int bubbleType;
                     game.setScreen(new RegionScreen(game));
                 break;
             case 1:
+                myManager.getOpportunityArray()[regionNum-1] = 0;
                 if(regionNum < 5)
                     game.setScreen(new BuyScreen(game));
                 else
                     game.setScreen(new SellScreen(game));
                 break;
             case 2:
+                myManager.getOpportunityArray()[regionNum-1]=0;
                 game.setScreen(new EventScreen(game, true));
+                break;
         }
 
     }
@@ -131,8 +134,8 @@ public int bubbleType;
 
 
             g.drawText("$"+String.valueOf(myManager.getMoney())+"K", 90, 710, Color.GREEN, 50);
-        g.drawText("Infl: 0", 90,710-50, Color.GREEN, 50);
-        g.drawText("Tap here for Buy Template", 640, 710, Color.GREEN, 30);
+        g.drawText("Infl: "+String.valueOf(myManager.getInfluencePoints()), 90,710-50, Color.GREEN, 50);
+        g.drawText("DoomsDay: "+String.valueOf((int)(myManager.getDoomsdayCounter()*100))+"%", 640, 710, Color.GREEN, 30);
         g.drawTextR("Inventory", 1270, 710, Color.GREEN, 50);
     }
 
