@@ -139,7 +139,7 @@ public class WinLoseScreen extends Screen {
             g.drawPixmap(Assets.backgroundFrame, 0, backgroundY, 0, 0 , 1280, 720);
             g.drawPixmap(Assets.menuBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
         }
-        g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 400, 100);
+        g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 600, 100);
         g.drawText("Return to Main Menu", 440 + 200, titleHeight + 50, Color.YELLOW, 50);
 
     }
