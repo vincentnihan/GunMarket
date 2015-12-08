@@ -387,7 +387,7 @@ public class GameManager {
             "We can act as their middleman",
             "+15% USA connection & +15% this region's connection for +3% Doomsday", "Deal", "No Deal");
     eventClass coupAttempt = new eventClass(4, "There will be a coup attempt in this continent.",
-            "We can support them with weapons.(Bought auto, if Inventory is not enough)","(-20 containers of LongGuns, +10 Influence pts, +1% Doomsday ctr", "Help them", "No deal");
+            "We can support them with weapons.(Bought auto, if Inventory is not enough)","(-10 containers of LongGuns, +10 Influence pts, +1% Doomsday ctr", "Help them", "No deal");
 
     eventClass[] randomEvents = new eventClass[]{
             newPolitical,
@@ -399,7 +399,11 @@ public class GameManager {
         if (isPositiveReply) {
             switch (eventNo) {
                 case 4:
-                    longGuns -= 20;
+                    longGuns -= 10;
+                    while(longGuns < 0){
+                        buyLongGun();
+                        changeMoney(-1);
+                    }
                     changeInfluencePoints(10);
                     changeDoomsdayCounter(0.01f);
                     break;
