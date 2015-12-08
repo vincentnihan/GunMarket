@@ -101,10 +101,12 @@ public int bubbleType;
                     openRegionScreen(7);
                     //game.setScreen(new RegionScreen(game));
                 }
+                /*
                 if(inBounds(event, 640-120, 620,240,100)){
                     // MIddle down button
                     game.setScreen(new BuyScreen(game));
                 }
+                */
                 if(inBounds(event,1080,620,200,100)){
                     // OPEN INVENTORY
                     game.setScreen(new InventoryScreen(game));
@@ -144,7 +146,8 @@ public int bubbleType;
 
             g.drawText("$"+String.valueOf(myManager.getMoney())+"K", 90, 710, Color.GREEN, 50);
         g.drawText("Infl: "+String.valueOf(myManager.getInfluencePoints()), 90,710-50, Color.GREEN, 50);
-        g.drawText("DoomsDay: "+String.valueOf((int)(myManager.getDoomsdayCounter()*100))+"%", 640, 710, Color.GREEN, 30);
+        g.drawText("DoomsDay: "+String.valueOf((int)(myManager.getDoomsdayCounter()*100))+"%", 640, 710-50, Color.GREEN, 30);
+        g.drawText(myManager.getDate(),640,710,Color.GREEN, 50);
         g.drawTextR("Inventory", 1270, 710, Color.GREEN, 50);
     }
 
