@@ -156,6 +156,43 @@ public class GameManager {
 
     }
 
+    void newGame(){
+
+         doomsdayCounter = 0;
+
+         handGuns = 0;
+         longGuns = 0;
+         explosives = 0;
+
+         handGunPrice = 10;
+         longGunPrice = 20;
+         explosivePrice = 15;
+
+         connectionUSA = 0;
+         connectionEU = 0;
+         connectionRussia = 0;
+         connectionChina = 0.1f;
+
+
+         connectionLatin = 0;
+         connectionAfrica = 0;
+         connectionMiddleE = 0;
+         connectionSouthAsia = 0;
+
+         year = 1990;
+         month = 1;
+         time = 0;
+         turnTime = 5;
+
+
+         influencePoints = 0;
+         money = 100;
+
+         currentRegion = 1;
+
+        opportunityArray = new int[8];
+    }
+
     public void progressTime(float dTime){
         time += dTime;
         if (time >= turnTime){

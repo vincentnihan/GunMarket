@@ -166,7 +166,8 @@ public class MainMenuScreen extends Screen {
                 {
                    // Log.i("MainMenu","Start Press");
                     buttonStage = 1;
-                    myManager = new GameManager(game);
+                   //myManager = new GameManager(game);
+                    myManager.newGame();
                     Assets.menuSlide.play(1);
                     return;
                 }
