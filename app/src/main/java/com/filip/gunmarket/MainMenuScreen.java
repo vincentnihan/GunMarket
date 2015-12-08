@@ -161,7 +161,7 @@ public class MainMenuScreen extends Screen {
                 {
                    // Log.i("MainMenu","Start Press");
                     buttonStage = 1;
-
+                    Assets.menuSlide.play(1);
                     return;
                 }
                 //Help
