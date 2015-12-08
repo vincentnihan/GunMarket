@@ -58,6 +58,7 @@ import android.view.View;
 public class HelpScreen extends Screen {
     public HelpScreen(Game game) {
         super(game);
+        Assets.menuSlide.play(1);
     }
 
     int backgroundX = 1280;
@@ -142,6 +143,7 @@ public class HelpScreen extends Screen {
                     //Log.i("HelpScreen","Help Press");
                     backgroundX = -1280;
                     back = true;
+                    Assets.menuSlide.play(1);
                     return;
                 }
             }

@@ -144,6 +144,7 @@ public class CreditScreen extends Screen {
                 {
                     //Log.i("HelpScreen","Help Press");
                     backgroundY = 720;
+                    Assets.menuSlide.play(1);
                     back = true;
                     return;
                 }
