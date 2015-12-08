@@ -4,7 +4,7 @@ import com.filip.androidgames.framework.Screen;
 import com.filip.androidgames.framework.impl.AndroidGame;
 
 public class GunMarket extends AndroidGame{
-   public GameManager myManager = new GameManager();
+   public GameManager myManager = new GameManager(this);
 
 
 

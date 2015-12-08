@@ -1,11 +1,14 @@
 package com.filip.gunmarket;
 
+import com.filip.androidgames.framework.Game;
+
 import java.util.Random;
 
 /**
  * Created by Erdem on 2015-12-06.
  */
 public class GameManager {
+    Game game;
     float doomsdayCounter = 0;
 
     int handGuns = 0;
@@ -42,6 +45,10 @@ public class GameManager {
 
     int[] opportunityArray = new int[8];
 
+    public GameManager(Game myGame){
+        game = myGame;
+    }
+
     public void investHawk(){
         if(money>=10 && influencePoints>= 3){
             changeMoney(-10);
@@ -71,16 +78,18 @@ public class GameManager {
         if (doomsdayCounter<0)
             doomsdayCounter=0;
     }
-    public void TimeChange()
+    public void changeDate()
     {
         month++;
         if(month >= 13)
         {
             month = 1;
             year++;
+            if (year >= 2015)
+                winGame();
         }
     }
-    public String getTime()
+    public String getDate()
     {
         switch(month)
         {
@@ -112,10 +121,16 @@ public class GameManager {
                 return "Error";
         }
     }
+    public  void winGame(){
+        game.setScreen(new WinLoseScreen(game,0));
+    }
+
     public void newTurn(){
-        TimeChange();
+        changeDate();
         if (doomsdayCounter >= 1){
             //END GAME
+            game.setScreen(new WinLoseScreen(game,2));
+
         }
         Assets.bubbleForm.play(1);
 
