@@ -381,13 +381,13 @@ public class GameManager {
 
     eventClass newGuerilla = new eventClass(2, "A new revolutionary movement is starting in this continent",
             "Making deals with them would be very profitable, at the expense of USA relations",
-            "(USA connections drops to 0 for $35K)", "Make the deal", "No deal");
+            "(USA connections drops to 0 for $25K)", "Make the deal", "No deal");
 
     eventClass counterRevolution = new eventClass(3, "CIA is arming a counter-revolutionary force in the continent.",
             "We can act as their middleman",
-            "+15% USA connection & +15% this region's connection for +3% Doomsday", "Deal", "No Deal");
+            "+15% USA connection & +15% this region's connection for +4% Doomsday", "Deal", "No Deal");
     eventClass coupAttempt = new eventClass(4, "There will be a coup attempt in this continent.",
-            "We can support them with weapons.(Bought auto, if Inventory is not enough)","(-10 containers of LongGuns, +10 Influence pts, +1% Doomsday ctr", "Help them", "No deal");
+            "We can support them with weapons.(Bought auto, if Inventory is not enough)","(-10 containers of LongGuns, +10 Influence pts, +2% Doomsday ctr", "Help them", "No deal");
 
     eventClass[] randomEvents = new eventClass[]{
             newPolitical,
@@ -405,31 +405,29 @@ public class GameManager {
                         changeMoney(-1);
                     }
                     changeInfluencePoints(10);
-                    changeDoomsdayCounter(0.01f);
+                    changeDoomsdayCounter(0.02f);
                     break;
                 case 1:
                     changeMoney(-20);
                     changeInfluencePoints(1);
                     break;
                 case 2:
-                    changeMoney(35);
+                    changeMoney(25);
                     connectionChange(1,-1);
                     break;
                 case 3:
                     connectionChange(1, 0.15f);
                     connectionChange(currentRegion, 0.15f);
-                    changeDoomsdayCounter(0.03f);
+                    changeDoomsdayCounter(0.04f);
                     break;
-
-
 
             }
         }
     }
 
     eventClass generateEvent(){
-        return  counterRevolution;
-        //return randomEvents[rand.nextInt(randomEvents.length)];
+        //return  counterRevolution;
+        return randomEvents[rand.nextInt(randomEvents.length)];
     }
 
 }
