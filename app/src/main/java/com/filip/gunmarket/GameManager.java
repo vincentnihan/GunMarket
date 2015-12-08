@@ -61,7 +61,7 @@ public class GameManager {
         if (doomsdayCounter >= 1){
             //END GAME
         }
-
+        Assets.bubbleForm.play(1);
 
 
             for (int i = 0;i <8; i++ ){
