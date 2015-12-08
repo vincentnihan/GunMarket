@@ -53,8 +53,12 @@ import android.graphics.Paint;
 import android.view.View;
 
 public class MainMenuScreen extends Screen {
+    GameManager myManager;
+    Game myGame;
     public MainMenuScreen(Game game) {
         super(game);
+        myGame = game;
+        myManager = game.getManager();
     }
     int buttonStage = 0;
     int titleHeight = -100;
@@ -153,8 +157,8 @@ public class MainMenuScreen extends Screen {
                 if(inBounds(event,440, titleHeight, 400, 100))
                 {
                    // Log.i("MainMenu","Credit Press");
-                    //game.setScreen(new CreditScreen(game));
-                    game.setScreen(new WinLoseScreen(game, 2));
+                    game.setScreen(new CreditScreen(game));
+                    //game.setScreen(new WinLoseScreen(game, 2));
                     return;
                 }
                 //New Game
@@ -162,6 +166,7 @@ public class MainMenuScreen extends Screen {
                 {
                    // Log.i("MainMenu","Start Press");
                     buttonStage = 1;
+                    myManager = new GameManager(game);
                     Assets.menuSlide.play(1);
                     return;
                 }
