@@ -91,6 +91,12 @@ public int bubbleType;
                     openRegionScreen(3);
                     //game.setScreen(new CountryScreen(game));
                 }
+                if (inBounds(event, 450,232,649-450,582-232)){
+                    openRegionScreen(6);
+                }
+                if (inBounds(event, 753,300, 1127-753,464-300)){
+                    openRegionScreen(8);
+                }
                 if(inBounds(event,815,162,991-815,259-162)){
                     //CHINA
                     openRegionScreen(4);
@@ -101,6 +107,7 @@ public int bubbleType;
                     openRegionScreen(7);
                     //game.setScreen(new RegionScreen(game));
                 }
+
                 /*
                 if(inBounds(event, 640-120, 620,240,100)){
                     // MIddle down button

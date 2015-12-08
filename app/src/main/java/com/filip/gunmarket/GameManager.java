@@ -130,8 +130,8 @@ public class GameManager {
         if (doomsdayCounter >= 1){
             //END GAME
             game.setScreen(new WinLoseScreen(game,2));
-
         }
+        changeDoomsdayCounter(0.006f);
         Assets.bubbleForm.play(1);
 
 
