@@ -127,10 +127,13 @@ public class GameManager {
     public void sellHandGun(){
         handGuns--;
         changeMoney(getHandGunPrice(false));
+        if (getConnectionByNum(currentRegion) < 0.4f)
+        connectionChange(currentRegion, 0.01f);
     }
     public void sellLongGun(){
         longGuns--;
         changeMoney(getLongGunPrice(false));
+        connectionChange(currentRegion, 0.015f);
     }
     public  void sellExplosives(){
         explosives--;
@@ -139,10 +142,13 @@ public class GameManager {
     public void buyHandGun(){
         handGuns++;
         changeMoney(-getHandGunPrice(true));
+        if (getConnectionByNum(currentRegion) < 0.4f)
+            connectionChange(currentRegion, 0.01f);
     }
     public void buyLongGun(){
         longGuns++;
         changeMoney(-getLongGunPrice(true));
+        connectionChange(currentRegion, 0.015f);
     }
     public  void buyExplosives(){
         explosives++;
@@ -219,7 +225,7 @@ public class GameManager {
         return  0;
     }
 
-    void connectionChange(int location, int Val)
+    void connectionChange(int location, float Val)
     {
         float temp = getConnectionByNum(location);
         temp += Val;

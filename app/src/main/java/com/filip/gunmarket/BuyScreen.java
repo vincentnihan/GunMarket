@@ -96,7 +96,7 @@ public class BuyScreen extends Screen {
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
 
         g.drawText(myManager.currentRegionName(), 640, 75, Color.GREEN, 70);
-        g.drawText("Connections: "+String.valueOf((int)(connections*100))+"%", 640, 105, Color.WHITE, 30);
+        g.drawText("Connections: "+String.valueOf((int)(myManager.getConnectionByNum(regionNum)*100))+"%", 640, 105, Color.WHITE, 30);
 
         g.drawText("TRADE TYPE", rowLeft, rowUp, Color.GREEN, 35);
         g.drawText("Handgun", rowLeft, rowUp + rowP, Color.WHITE, 30);
