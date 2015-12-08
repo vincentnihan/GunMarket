@@ -22,6 +22,8 @@ public class BuyScreen extends Screen {
     int regionNum = 1;
     float connections = 0;
 
+    Boolean tipsDisplay;
+    float displayTime;
     Random rand = new Random();
 
     public BuyScreen(Game game) {
@@ -48,18 +50,23 @@ public class BuyScreen extends Screen {
             myManager.buyHandGun();
             handGunOffer--;
         }
+        tipsDisplay = true;
     }
     void buyLongGun(){
         if (longGunOffer>0 && myManager.getMoney() >= myManager.getLongGunPrice(true)){
             myManager.buyLongGun();
             longGunOffer--;
         }
+        else
+            tipsDisplay = true;
     }
     void buyExplosives(){
         if (explosiveOffer>0 && myManager.getMoney() >= myManager.getExplosivePrice(true)){
             myManager.buyExplosives();;
             explosiveOffer--;
         }
+        else
+            tipsDisplay = true;
     }
 
     int rowLeft = 100;
@@ -120,10 +127,21 @@ public class BuyScreen extends Screen {
 
         g.drawText("BUY", rowLeft+1050, rowUp + rowP, Color.YELLOW, 30);
         g.drawText("BUY", rowLeft+1050, rowUp + rowP*2, Color.YELLOW, 30);
-        g.drawText("BUY", rowLeft+1050, rowUp+rowP*3, Color.YELLOW, 30);
+        g.drawText("BUY", rowLeft + 1050, rowUp + rowP * 3, Color.YELLOW, 30);
 
 
         g.drawPixmap(Assets.backButton, 1280 - 128, 720 - 128);
+
+        if(tipsDisplay == true)
+        {
+            g.drawText("This gun is run out of stock. Stock is depend on region's connection", 640, 600, Color.GREEN, 30);
+            displayTime += deltaTime;
+            if(displayTime > 3)
+            {
+                displayTime = 0;
+                tipsDisplay = false;
+            }
+        }
     }
 
 

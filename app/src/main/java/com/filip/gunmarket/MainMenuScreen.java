@@ -153,7 +153,8 @@ public class MainMenuScreen extends Screen {
                 if(inBounds(event,440, titleHeight, 400, 100))
                 {
                    // Log.i("MainMenu","Credit Press");
-                    game.setScreen(new CreditScreen(game));
+                    //game.setScreen(new CreditScreen(game));
+                    game.setScreen(new WinLoseScreen(game, 2));
                     return;
                 }
                 //New Game

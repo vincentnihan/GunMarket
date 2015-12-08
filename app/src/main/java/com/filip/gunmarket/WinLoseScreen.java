@@ -93,7 +93,7 @@ public class WinLoseScreen extends Screen {
             }
             g.drawRect(0, backgroundY, 1280, 720, Color.DKGRAY);
             if(WinLoseType == 2)
-                g.drawPixmap(Assets.backgroundFrame, 640, backgroundY + 450, 0, 0, 200, 200); //A pic for lose screen
+                g.drawPixmap(Assets.nuclearPic, 340, backgroundY + 100, 0, 0, 600, 510); //A pic for lose screen
             switch(WinLoseType)
             {
                 case 0://Win
@@ -102,14 +102,14 @@ public class WinLoseScreen extends Screen {
                     break;
                 case 1: // Lose A
                 {
-                    g.drawText("Lose A", 640, backgroundY + 80, Color.GREEN, 25);
-                    g.drawText("Lose A", 640, backgroundY + 380, Color.WHITE, 25);
+                    g.drawText("Congratulations!", 640, backgroundY + 80, Color.GREEN, 25);
+                    g.drawText("You run out of money to support your business.", 640, backgroundY + 380, Color.WHITE, 25);
                     break;
                 }
                 case 2: // Lose B
                 {
                     g.drawText("Congratulations!", 640, backgroundY + 80, Color.GREEN, 25);
-                    g.drawText("Millions have died... Your customers are running out of people to kill.", 640, backgroundY + 380, Color.WHITE, 25);
+                    g.drawText("Millions have died... Your customers are running out of people to kill.", 640, backgroundY + 180, Color.WHITE, 25);
                     break;
                 }
             }
@@ -140,7 +140,7 @@ public class WinLoseScreen extends Screen {
             g.drawPixmap(Assets.menuBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
         }
         g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 600, 100);
-        g.drawText("Return to Main Menu", 440 + 200, titleHeight + 50, Color.YELLOW, 50);
+        g.drawText("Return to Main Menu", 440 + 200, titleHeight + 50, Color.YELLOW, 40);
 
     }
 

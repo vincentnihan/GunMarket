@@ -91,7 +91,7 @@ public class HelpScreen extends Screen {
 
             g.drawPixmap(Assets.backgroundFrame, backgroundX, 0, 0, 0, 1280, 720);
             g.drawPixmap(Assets.helpBackground, backgroundX+25, 25, 0, 0, 1230, 670);
-            g.drawPixmap(Assets.helpTextFrame, backgroundX+340,60, 0, 0 , 600, 400);
+            g.drawPixmap(Assets.helpTextFrame, backgroundX+25,60, 0, 0 , 1230, 400);
             g.drawText("Introduction", backgroundX + 640, 130, Color.GREEN, 50);
             g.drawText("Your the gun dealer about to get in the world weapon market.The game start at 1990 and each month",backgroundX+640, 180, Color.WHITE, 25);
             g.drawText("will only last 10s.Bubble will appear according to your connection to that region.",backgroundX+640, 230, Color.WHITE, 25);

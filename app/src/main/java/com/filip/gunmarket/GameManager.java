@@ -131,6 +131,10 @@ public class GameManager {
             //END GAME
             game.setScreen(new WinLoseScreen(game, 2));
         }
+        if (money <= -100){
+            //END GAME
+            game.setScreen(new WinLoseScreen(game, 1));
+        }
         changeDoomsdayCounter(0.014f);
         Assets.bubbleForm.play(1);
 
