@@ -55,12 +55,13 @@ import android.view.View;
 /**
  * Created by Administrator on 2015/11/17.
  */
-public class CreditScreen extends Screen {
-    public CreditScreen(Game game) {
+public class WinLoseScreen extends Screen {
+    public WinLoseScreen(Game game, int type) {
         super(game);
         Assets.menuSlide.play(1);
+        WinLoseType = type;
     }
-
+    int WinLoseType;
     int backgroundY = -720;
     int titleHeight = 0;
     int speed = 50;
@@ -90,15 +91,28 @@ public class CreditScreen extends Screen {
                 else
                     titleHeight += 50 ;
             }
-            g.drawPixmap(Assets.backgroundFrame, 0, backgroundY, 0, 0 , 1280, 720);
-            g.drawPixmap(Assets.creditBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
-            g.drawPixmap(Assets.helpTextFrame, 340,backgroundY+60, 0, 0 , 600, 400);
-            g.drawText("Credit", 640, backgroundY + 130, Color.GREEN, 50);
-            g.drawText("Vincent Ni",640, backgroundY+180, Color.WHITE, 25);
-            g.drawText("Mehmet Erdem Gunay",640, backgroundY+230, Color.WHITE, 25);
-            g.drawText("Chao Wang", 640, backgroundY+280, Color.WHITE, 25);
-            g.drawText("Andrew Justin Lacap", 640, backgroundY+330, Color.WHITE, 25);
-            g.drawText("Parth Deepak Kakkad", 640, backgroundY+380, Color.WHITE, 25);
+            g.drawRect(0, backgroundY, 1280, 720, Color.DKGRAY);
+            if(WinLoseType == 2)
+                g.drawPixmap(Assets.backgroundFrame, 640, backgroundY + 450, 0, 0, 200, 200); //A pic for lose screen
+            switch(WinLoseType)
+            {
+                case 0://Win
+                    g.drawText("You Successfully suvived to 2015!", 640, backgroundY + 80, Color.GREEN, 25);
+                    g.drawText("Win A", 640, backgroundY + 380, Color.WHITE, 25);
+                    break;
+                case 1: // Lose A
+                {
+                    g.drawText("Lose A", 640, backgroundY + 80, Color.GREEN, 25);
+                    g.drawText("Lose A", 640, backgroundY + 380, Color.WHITE, 25);
+                    break;
+                }
+                case 2: // Lose B
+                {
+                    g.drawText("Lose B", 640, backgroundY + 80, Color.GREEN, 25);
+                    g.drawText("Lose B", 640, backgroundY + 380, Color.WHITE, 25);
+                    break;
+                }
+            }
 
         }
         else
@@ -126,7 +140,7 @@ public class CreditScreen extends Screen {
             g.drawPixmap(Assets.menuBackground, 25, backgroundY + 25, 0, 0, 1230, 670);
         }
         g.drawPixmap(Assets.topicBackground, 440, titleHeight, 0, 0, 400, 100);
-        g.drawText("Bringer of Peace", 440 + 200, titleHeight + 50, Color.GREEN, 50);
+        g.drawText("Return to Main Menu", 440 + 200, titleHeight + 50, Color.YELLOW, 50);
 
     }
 
@@ -143,6 +157,7 @@ public class CreditScreen extends Screen {
                 if(inBounds(event, 440, titleHeight, 400, 100))
                 {
                     //Log.i("HelpScreen","Help Press");
+                    Assets.menuSlide.play(1);
                     backgroundY = 720;
                     back = true;
                     return;

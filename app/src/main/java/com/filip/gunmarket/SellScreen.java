@@ -29,7 +29,7 @@ public class SellScreen extends Screen {
     public SellScreen(Game game) {
         super(game);
         myManager = game.getManager();
-
+        Assets.bubblePop.play(1);
         regionNum = myManager.getCurrentRegion();
         connections = myManager.getConnectionByNum(regionNum);
 

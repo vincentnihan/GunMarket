@@ -17,6 +17,7 @@ public class EventScreen extends Screen {
     public EventScreen(Game game, boolean Event) {
         super(game);
         myManager = game.getManager();
+        Assets.bubblePop.play(1);
         IsEvent = Event;
 
     }

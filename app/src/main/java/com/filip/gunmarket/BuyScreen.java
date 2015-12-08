@@ -27,7 +27,7 @@ public class BuyScreen extends Screen {
     public BuyScreen(Game game) {
         super(game);
         myManager = game.getManager();
-
+        Assets.bubblePop.play(1);
         regionNum = myManager.getCurrentRegion();
         connections = myManager.getConnectionByNum(regionNum);
 

@@ -20,10 +20,22 @@ public class WorldScreen extends Screen {
     public WorldScreen(Game game) {
         super(game);
         myManager = game.getManager();
+        Assets.Background1.play(1);
     }
 
 public int location;
 public int bubbleType;
+
+    public void bgmPlayer(int BGM)
+    {
+        // if(BGM == 1)
+        // Assets.Background1.play(1);
+        //else if(BGM == 2)
+        //Assets.Background2.play(1);
+        //else if(BGM == 3)
+        //Assets.Background3.play(1);
+
+    }
 
     public void openRegionScreen(int regionNum){
         myManager.setCurrentRegion(regionNum);

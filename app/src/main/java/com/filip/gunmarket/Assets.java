@@ -23,4 +23,10 @@ public class Assets {
     public static Pixmap helpBackground;
     public static Pixmap helpTextFrame;
 
+    public static Sound Background1;
+    //public static Sound Background2;
+    //public static Sound Background3;
+    public static Sound menuSlide;
+    public static Sound bubblePop;
+    public static Sound bubbleForm;
 }

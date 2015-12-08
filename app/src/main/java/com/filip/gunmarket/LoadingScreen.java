@@ -20,6 +20,17 @@ public class LoadingScreen extends Screen
     @Override
     public void update(float deltaTime) {
         Graphics g = game.getGraphics();
+
+        //Assets.Background1  = game.getAudio().newSound("Background1.mp3");
+        //Assets.Background2 = game.getAudio().newSound("Background2.mp3");
+        //Assets.Background3 = game.getAudio().newSound("Background3.mp3");
+        //Assets.menuSlide = game.getAudio().newSound("Menu.mp3");
+        Assets.Background1  = game.getAudio().newSound("Bubble Forming.mp3");
+        Assets.menuSlide = game.getAudio().newSound("Bubble Forming.mp3");
+        Assets.bubblePop = game.getAudio().newSound("Bubble Pop.mp3");
+        Assets.bubbleForm = game.getAudio().newSound("Bubble Forming.mp3");
+
+
         Assets.menuBackground = g.newPixmap("darkWorldmap.jpg", PixmapFormat.ARGB4444);
         //Assets.logo = g.newPixmap("logo.png", PixmapFormat.ARGB4444);
         Assets.buttonBackground = g.newPixmap("ButtonBackground.jpg", PixmapFormat.ARGB4444);
