@@ -110,8 +110,8 @@ public int bubbleType;
                 }
                 if(inBounds(event,1080,620,200,100)){
                     // OPEN INVENTORY
-                    //game.setScreen(new InventoryScreen(game));
-                    game.setScreen(new EventScreen(game, true));
+                    game.setScreen(new InventoryScreen(game));
+                   // game.setScreen(new EventScreen(game, true));
                     
                 }
             }

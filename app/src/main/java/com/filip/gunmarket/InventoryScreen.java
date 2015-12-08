@@ -13,8 +13,10 @@ import java.util.List;
  * Created by Erdem on 2015-11-17.
  */
 public class InventoryScreen extends Screen {
+    GameManager myManager;
     public InventoryScreen(Game game) {
         super(game);
+        myManager = game.getManager();
     }
 
     int rowLeft = 100;
@@ -42,7 +44,7 @@ public class InventoryScreen extends Screen {
         g.drawRect(0, 0, 1280, 720, Color.DKGRAY);
 
         g.drawText("INVENTORY", 640, 75, Color.GREEN, 70);
-        g.drawText("$100K", 640, 105, Color.WHITE, 30);
+        g.drawText("$", 640, 105, Color.WHITE, 30);
 
         g.drawText("TRADE TYPE", rowLeft+350, rowUp, Color.GREEN, 35);
         g.drawText("Handgun", rowLeft+350, rowUp + 80, Color.WHITE, 30);
@@ -50,9 +52,9 @@ public class InventoryScreen extends Screen {
         g.drawText("Explosives", rowLeft+350, rowUp+240, Color.WHITE, 30);
 
         g.drawText("Inventory", rowLeft+700, rowUp, Color.GREEN, 35);
-        g.drawText("0", rowLeft+700, rowUp + 80, Color.WHITE, 30);
-        g.drawText("0", rowLeft+700, rowUp + 160, Color.WHITE, 30);
-        g.drawText("0", rowLeft+700, rowUp+240, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getHandGuns()), rowLeft+700, rowUp + 80, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getLongGuns()), rowLeft+700, rowUp + 160, Color.WHITE, 30);
+        g.drawText(String.valueOf(myManager.getExplosives()), rowLeft+700, rowUp+240, Color.WHITE, 30);
 
 
 
