@@ -11,19 +11,21 @@ public class eventClass {
     String optionA;
     String optionB;
 
+    int eventNum;
+
     public eventClass
-            (String A,
+            (int num,
+             String A,
              String B,
              String C,
-             String D,
-             String E,
-             String F)
+             String op1,
+             String op2)
     {
-        eventTopic  = A;
-        eventText1 = B;
-        eventText2 = C;
-        eventText3 = D;
-        optionA = E;
-        optionB = F;
+        eventNum = num;
+        eventText1 = A;
+        eventText2 = B;
+        eventText3 = C;
+        optionA = op1;
+        optionB = op2;
     }
 }

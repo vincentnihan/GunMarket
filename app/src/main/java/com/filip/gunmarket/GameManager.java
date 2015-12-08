@@ -122,14 +122,14 @@ public class GameManager {
         }
     }
     public  void winGame(){
-        game.setScreen(new WinLoseScreen(game,0));
+        game.setScreen(new WinLoseScreen(game, 0));
     }
 
     public void newTurn(){
         changeDate();
         if (doomsdayCounter >= 1){
             //END GAME
-            game.setScreen(new WinLoseScreen(game,2));
+            game.setScreen(new WinLoseScreen(game, 2));
         }
         changeDoomsdayCounter(0.006f);
         Assets.bubbleForm.play(1);
@@ -347,22 +347,85 @@ public class GameManager {
         {
             case 1:
                 connectionUSA = temp;
+                break;
             case 2:
                 connectionEU = temp;
+                break;
             case 3:
                 connectionRussia = temp;
+                break;
             case 4:
                 connectionChina = temp;
+                break;
             case 5:
                 connectionLatin = temp;
+                break;
             case 6:
                 connectionAfrica = temp;
+                break;
             case 7:
                 connectionMiddleE = temp;
+                break;
             case 8:
                 connectionSouthAsia = temp;
-
+                break;
         }
+    }
+
+    ////////////////EVENTS
+
+
+
+    eventClass newPolitical = new eventClass(1, "A new political figure is rising in the region",
+            "He asks for your help, offers to return the favor in the future.", "($20K for 1 Influence p)", "Offer Help", "Deny");
+
+    eventClass newGuerilla = new eventClass(2, "A new revolutionary movement is starting in this continent",
+            "Making deals with them would be very profitable, at the expense of USA relations",
+            "(USA connections drops to 0 for $35K)", "Make the deal", "No deal");
+
+    eventClass counterRevolution = new eventClass(3, "CIA is arming a counter-revolutionary force in the continent.",
+            "We can act as their middleman",
+            "+15% USA connection & +15% this region's connection for +3% Doomsday", "Deal", "No Deal");
+    eventClass coupAttempt = new eventClass(4, "There will be a coup attempt in this continent.",
+            "We can support them with weapons.(Bought auto, if Inventory is not enough)","(-20 containers of LongGuns, +10 Influence pts, +1% Doomsday ctr", "Help them", "No deal");
+
+    eventClass[] randomEvents = new eventClass[]{
+            newPolitical,
+            newGuerilla,
+            counterRevolution,
+            coupAttempt
+    };
+    public void eventResult(int eventNo, boolean isPositiveReply) {
+        if (isPositiveReply) {
+            switch (eventNo) {
+                case 4:
+                    longGuns -= 20;
+                    changeInfluencePoints(10);
+                    changeDoomsdayCounter(0.01f);
+                    break;
+                case 1:
+                    changeMoney(-20);
+                    changeInfluencePoints(1);
+                    break;
+                case 2:
+                    changeMoney(35);
+                    connectionChange(1,-1);
+                    break;
+                case 3:
+                    connectionChange(1, 0.15f);
+                    connectionChange(currentRegion, 0.15f);
+                    changeDoomsdayCounter(0.03f);
+                    break;
+
+
+
+            }
+        }
+    }
+
+    eventClass generateEvent(){
+        return  counterRevolution;
+        //return randomEvents[rand.nextInt(randomEvents.length)];
     }
 
 }

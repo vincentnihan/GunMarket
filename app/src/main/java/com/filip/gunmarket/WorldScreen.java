@@ -53,7 +53,7 @@ public int bubbleType;
                 break;
             case 2:
                 myManager.getOpportunityArray()[regionNum-1]=0;
-                game.setScreen(new EventScreen(game, true));
+                game.setScreen(new EventScreen(game, true, myManager.generateEvent()));
                 break;
         }
 
