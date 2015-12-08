@@ -131,7 +131,7 @@ public class GameManager {
             //END GAME
             game.setScreen(new WinLoseScreen(game, 2));
         }
-        changeDoomsdayCounter(0.006f);
+        changeDoomsdayCounter(0.014f);
         Assets.bubbleForm.play(1);
 
 
@@ -212,7 +212,7 @@ public class GameManager {
 
 
     public void sellHandGun(){
-        changeDoomsdayCounter(0.001f);
+        changeDoomsdayCounter(0.002f);
 
         handGuns--;
         changeMoney(getHandGunPrice(false));
@@ -220,31 +220,31 @@ public class GameManager {
         connectionChange(currentRegion, 0.01f);
     }
     public void sellLongGun(){
-        changeDoomsdayCounter(0.001f);
+        changeDoomsdayCounter(0.002f);
         longGuns--;
         changeMoney(getLongGunPrice(false));
         connectionChange(currentRegion, 0.015f);
     }
     public  void sellExplosives(){
-        changeDoomsdayCounter(0.001f);
+        changeDoomsdayCounter(0.002f);
         explosives--;
         changeMoney(getExplosivePrice(false));
     }
     public void buyHandGun(){
-        changeDoomsdayCounter(0.001f);
+        changeDoomsdayCounter(0.002f);
         handGuns++;
         changeMoney(-getHandGunPrice(true));
         if (getConnectionByNum(currentRegion) < 0.4f)
             connectionChange(currentRegion, 0.01f);
     }
     public void buyLongGun(){
-        changeDoomsdayCounter(0.001f);
+        changeDoomsdayCounter(0.002f);
         longGuns++;
         changeMoney(-getLongGunPrice(true));
         connectionChange(currentRegion, 0.015f);
     }
     public  void buyExplosives(){
-        changeDoomsdayCounter(0.001f);
+        changeDoomsdayCounter(0.002f);
         explosives++;
         changeMoney(-getExplosivePrice(true));
     }
