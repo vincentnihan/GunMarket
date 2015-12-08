@@ -36,7 +36,7 @@ public class RegionScreen extends Screen {
                 if (inBounds(event, 1280-128, 720-128, 128, 128)) {
                     game.setScreen(new WorldScreen(game));
                 }
-                if (inBounds(event,rowLeft+950, rowUp+(rowP-50),200, 100)) {
+                if (inBounds(event,rowLeft+950, rowUp+rowP-50,200, 100)) {
                     myManager.investHawk();
                 }
                 if (inBounds(event,rowLeft+950, rowUp+(rowP*3)-50,200, 100)){

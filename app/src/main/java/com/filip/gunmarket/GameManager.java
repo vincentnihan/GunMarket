@@ -34,7 +34,7 @@ public class GameManager {
 
 
     int influencePoints = 0;
-    int money = 1000;
+    int money = 100;
 
     Random rand = new Random();
 
