@@ -178,7 +178,7 @@ public int bubbleType;
                     g.drawPixmap(Assets.tradeIcon, 645, 193, 0, 0, 50, 50); //MIDDLE EAST
                     break;
                 case 8:
-                    g.drawPixmap(Assets.tradeIcon, 825, 275, 0, 0, 50, 50);// SOUTH ASIA
+                    g.drawPixmap(Assets.tradeIcon, 825, 325, 0, 0, 50, 50);// SOUTH ASIA
                     break;
             }
         }
@@ -207,7 +207,7 @@ public int bubbleType;
                     g.drawPixmap(Assets.eventIcon, 645, 193, 0, 0, 50, 50); //MIDDLE EAST
                     break;
                 case 8:
-                    g.drawPixmap(Assets.eventIcon, 825, 275, 0, 0, 50, 50);// SOUTH ASIA
+                    g.drawPixmap(Assets.eventIcon, 825, 325, 0, 0, 50, 50);// SOUTH ASIA
                     break;
             }
         }
