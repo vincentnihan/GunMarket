@@ -22,15 +22,28 @@ public class EventScreen extends Screen {
 
     }
 
+    public EventScreen(Game game, boolean Event, eventClass event) {
+        super(game);
+        myManager = game.getManager();
+        Assets.bubblePop.play(1);
+        IsEvent = Event;
+        eventTopic = event.eventTopic;
+        eventText1 = event.eventText1;
+        eventText2 = event.eventText2;
+        eventText3 = event.eventText3;
+        optionA = event.optionA;
+        optionB = event.optionB;
+    }
+
     public boolean IsEvent;
 
     public int eventReply;
-    public String eventTopic = "Topic";
-    public String eventText1 = "Event Text";
-    public String eventText2 = "Event Text";
-    public String eventText3 = "Event Text";
-    public String optionA = "Option A";
-    public String optionB = "Option B";
+    public String eventTopic;
+    public String eventText1;
+    public String eventText2;
+    public String eventText3;
+    public String optionA;
+    public String optionB;
 
 
     public  void update(float deltaTime) {
