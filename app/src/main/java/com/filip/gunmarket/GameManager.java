@@ -138,15 +138,15 @@ public class GameManager {
     }
     public void buyHandGun(){
         handGuns++;
-        changeMoney(getHandGunPrice(true));
+        changeMoney(-getHandGunPrice(true));
     }
     public void buyLongGun(){
         longGuns++;
-        changeMoney(getLongGunPrice(true));
+        changeMoney(-getLongGunPrice(true));
     }
     public  void buyExplosives(){
         explosives++;
-        changeMoney(getExplosivePrice(true));
+        changeMoney(-getExplosivePrice(true));
     }
     public int getMoney() {
         return money;
