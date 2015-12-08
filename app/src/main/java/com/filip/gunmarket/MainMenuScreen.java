@@ -176,6 +176,7 @@ public class MainMenuScreen extends Screen {
                 {
                     //Log.i("MainMenu","Help Press");
                     game.setScreen(new HelpScreen(game));
+                    //game.setScreen(new WinLoseScreen(game, 2));
                     return;
                 }
             }

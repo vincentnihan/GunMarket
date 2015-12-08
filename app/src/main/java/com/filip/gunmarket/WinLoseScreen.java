@@ -97,19 +97,19 @@ public class WinLoseScreen extends Screen {
             switch(WinLoseType)
             {
                 case 0://Win
-                    g.drawText("Congratulations! ", 640, backgroundY + 80, Color.GREEN, 25);
+                    g.drawText("Congratulations! ", 640, backgroundY + 80, Color.GREEN, 35);
                     g.drawText("You (and most of the world) survived long enough for you to retire!", 640, backgroundY + 380, Color.WHITE, 25);
                     break;
                 case 1: // Lose A
                 {
-                    g.drawText("Congratulations!", 640, backgroundY + 80, Color.GREEN, 25);
+                    g.drawText("Bankruptcy!", 640, backgroundY + 80, Color.GREEN, 35);
                     g.drawText("You run out of money to support your business.", 640, backgroundY + 380, Color.WHITE, 25);
                     break;
                 }
                 case 2: // Lose B
                 {
-                    g.drawText("Congratulations!", 640, backgroundY + 80, Color.GREEN, 25);
-                    g.drawText("Millions have died... Your customers are running out of people to kill.", 640, backgroundY + 180, Color.WHITE, 25);
+                    g.drawText("Congratulations!", 640, backgroundY + 80, Color.GREEN, 35);
+                    g.drawText("Millions have died... Your customers are running out of people to kill.", 640, backgroundY + 180, Color.WHITE, 18);
                     break;
                 }
             }

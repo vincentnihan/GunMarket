@@ -5,7 +5,7 @@
         android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
 
         <activity android:name=".GunMarket"
-            android:label="@string/app_name"
+            android:label="Bringer of Peace"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" >
 
